@@ -1027,6 +1027,19 @@ button {
   50% { opacity: 0; }
 }
 
+/* En los celulares más angostos la ficha se ajusta para que ninguna palabra se corte al medio. */
+@media (max-width: 22.5rem) {
+  .ficha__lista {
+    padding-inline: 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .ficha__fila {
+    grid-template-columns: 8em minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+}
+
 @media (min-width: 40rem) {
   .hero__cifras {
     grid-template-columns: repeat(4, minmax(0, 1fr));
