@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emanuel Gibello — Analista IT</title>
+  <meta name="description" content="Portfolio de Emanuel Gibello, Analista IT en La Plata, Argentina. Productos propios: Cobro Flotante, FRIGO y Preparador de listas.">
+  <meta name="theme-color" content="#050506">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Chakra+Petch:ital,wght@1,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="js/pre.js"></script>
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <div class="luz" id="luz" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="nav__marca" href="#inicio" aria-label="Emanuel Gibello, ir al inicio">
+      <span class="neon" aria-hidden="true">EG</span>
+    </a>
+    <nav aria-label="Secciones">
+      <ul class="nav__lista">
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="nav__pausa" id="pausa" type="button" aria-pressed="false" aria-label="Pausar las animaciones"></button>
+  </header>
+
+  <main id="contenido">
+    <!-- ============ Inicio ============ -->
+    <section class="hero" id="inicio" aria-labelledby="hero-nombre">
+      <div class="hero__fondo" aria-hidden="true">
+        <div class="hero__resplandor"></div>
+        <div class="rejilla"><i></i></div>
+      </div>
+
+      <div class="contenedor hero__grilla">
+        <div class="hero__texto">
+          <p class="rotulo hero__rotulo"><span class="punto"></span><span id="hero-ocupacion">Analista IT</span> <span class="sep">/</span> <span id="hero-lugar">La Plata, Argentina</span></p>
+
+          <h1 class="hero__nombre neon" id="hero-nombre" aria-label="Emanuel Gibello">
+            <span class="linea" aria-hidden="true" data-texto="Emanuel">Emanuel</span>
+            <span class="linea" aria-hidden="true" data-texto="Gibello">Gibello</span>
+          </h1>
+
+          <p class="hero__roles" aria-hidden="true">
+            <span class="hero__signo">&gt;</span>
+            <span class="roles" id="roles"><span class="rol activo">Analista IT</span></span>
+          </p>
+          <p class="oculto">Analista IT, Soporte Técnico y Análisis Funcional.</p>
+
+          <p class="hero__presentacion" id="presentacion">Implemento sistemas, doy soporte y traduzco lo que necesita la gente en software que funciona. Y cuando la herramienta no existe, la construyo.</p>
+
+          <div class="hero__acciones">
+            <a class="boton" href="#productos">
+              Ver mis productos
+              <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="boton boton--fantasma" href="#contacto">Contacto</a>
+          </div>
+        </div>
+
+        <aside class="ficha" aria-label="Ficha rápida">
+          <div class="ficha__barra" aria-hidden="true"><i></i><i></i><i></i><span>ficha.txt</span></div>
+          <dl class="ficha__lista" id="ficha"></dl>
+        </aside>
+      </div>
+
+      <ul class="contenedor cifras hero__cifras" id="hero-cifras" aria-label="En números"></ul>
+    </section>
+
+    <!-- ============ Productos ============ -->
+    <section class="seccion" id="productos" aria-labelledby="t-productos">
+      <div class="contenedor">
+        <header class="titulo" data-revelar="izq">
+          <p class="rotulo">01 — Productos</p>
+          <h2 id="t-productos"><span class="hueco">Mis</span> productos</h2>
+          <p class="titulo__bajada">
+            Tres sistemas propios, pensados a partir de problemas reales.
+            <span class="solo-mouse">Pasá el mouse por cada uno y la tapa se corre.</span>
+            <span class="solo-tactil">Tocá cada uno: la puerta se corre y se abre a pantalla completa.</span>
+          </p>
+        </header>
+
+        <div class="productos" id="productos-lista"></div>
+
+        <!-- Las bases técnicas con las que se desarrollan los tres productos -->
+        <div class="bases" id="bases" data-revelar="arriba"></div>
+      </div>
+    </section>
+
+    <!-- ============ Sobre mí ============ -->
+    <section class="seccion" id="sobre-mi" aria-labelledby="t-sobre">
+      <div class="contenedor">
+        <header class="titulo" data-revelar="izq">
+          <p class="rotulo">02 — Sobre mí</p>
+          <h2 id="t-sobre"><span class="hueco">Lo</span> básico</h2>
+          <p class="titulo__bajada">Ocupación, años de experiencia y stack: cada respuesta está debajo de su tapa.</p>
+        </header>
+
+        <div class="sobre" id="sobre-lista" data-revelar="arriba"></div>
+      </div>
+    </section>
+
+    <!-- ============ Contacto ============ -->
+    <section class="seccion contacto" id="contacto" aria-labelledby="t-contacto">
+      <div class="contenedor" data-revelar="arriba">
+        <p class="rotulo">03 — Contacto</p>
+        <h2 class="contacto__titulo neon" id="t-contacto">Hablemos</h2>
+        <p class="contacto__bajada">¿Tenés un proceso para ordenar, un sistema para implementar o una idea que todavía no existe?</p>
+        <div class="contacto__acciones" id="contacto-acciones"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__fila">
+      <p>© <span id="anio">2026</span> Emanuel Gibello · <span id="pie-lugar">La Plata, Argentina</span></p>
+      <p class="pie__hecho">HTML · CSS · JavaScript · Node.js</p>
+    </div>
+  </footer>
+
+  <!-- ============ Detalle de un producto ============ -->
+  <dialog class="detalle" id="detalle" aria-labelledby="detalle-nombre">
+    <i class="detalle__barrido" aria-hidden="true"></i>
+    <div class="detalle__barra">
+      <button class="volver" id="detalle-volver" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5"/><path d="M11 6l-6 6 6 6"/></svg>
+        <span>Productos</span>
+      </button>
+      <span class="detalle__posicion" id="detalle-posicion" aria-hidden="true"></span>
+      <button class="redondo redondo--chico" id="detalle-cerrar" type="button" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="detalle__cuerpo" id="detalle-cuerpo"></div>
+  </dialog>
+
+  <!-- ============ Una captura, ampliada ============ -->
+  <dialog class="lupa" id="lupa" aria-label="Captura ampliada">
+    <figure class="lupa__marco">
+      <div class="lupa__imagen"><img id="lupa-imagen" alt=""></div>
+      <figcaption>
+        <span id="lupa-pie"></span>
+        <button class="boton boton--chico boton--fantasma" id="lupa-cerrar" type="button">Cerrar</button>
+      </figcaption>
+    </figure>
+  </dialog>
+
+  <noscript>
+    <p class="sin-js">Esta página necesita JavaScript para mostrar los productos.</p>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <filter id="brillo" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#050506"/>
+  <rect x="5" y="5" width="54" height="54" rx="11" fill="none" stroke="#ff2740" stroke-width="2.5" filter="url(#brillo)"/>
+  <g fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#brillo)">
+    <path d="M28 21H17v22h11M17 32h9"/>
+    <path d="M48 25c-1.5-2.7-4-4-7-4-4.5 0-8 4.5-8 11s3.5 11 8 11c3.8 0 7-2.6 7-7.5V32h-6"/>
+  </g>
+</svg>

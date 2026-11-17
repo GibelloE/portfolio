@@ -1,0 +1,11 @@
+# Lo que arma "npm run build": se genera, no se guarda.
+dist/
+
+node_modules/
+*.log
+
+# Configuración local de herramientas y archivos del sistema
+.claude/
+.vscode/
+.DS_Store
+Thumbs.db

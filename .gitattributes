@@ -1,0 +1,3 @@
+# Los mismos finales de línea en cualquier PC, y las capturas como archivos binarios.
+* text=auto eol=lf
+*.webp binary

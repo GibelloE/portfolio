@@ -1,0 +1,891 @@
+{
+  "perfil": {
+    "nombre": "Emanuel Gibello",
+    "ocupacion": "Analista IT",
+    "roles": [
+      "Analista IT",
+      "Soporte Técnico",
+      "Análisis Funcional",
+      "Implementación de sistemas",
+      "Redes LAN",
+      "Productos propios"
+    ],
+    "ubicacion": "La Plata, Argentina",
+    "experienciaDesde": "2018-01-01",
+    "presentacion": "Implemento sistemas, doy soporte y traduzco lo que necesita la gente en software que funciona. Y cuando la herramienta no existe, la construyo.",
+    "resumen": [
+      "Analista IT con experiencia en implementación de sistemas y soporte técnico. Me destaco por una comunicación efectiva con usuarios y equipos de trabajo, combinando habilidades blandas y técnicas para optimizar procesos y resolver problemas de forma eficiente.",
+      "Además desarrollo mis propios productos. Nacen de problemas reales —el mostrador de un comercio, una planta de empaque, las listas de precios de decenas de proveedores— y se prueban con sus usuarios antes de crecer."
+    ],
+    "cifras": [
+      {
+        "clave": "anios",
+        "prefijo": "+",
+        "etiqueta": "años de experiencia en IT"
+      },
+      {
+        "valor": 10,
+        "prefijo": "+",
+        "etiqueta": "sistemas implementados con éxito"
+      },
+      {
+        "valor": 100,
+        "prefijo": "+",
+        "etiqueta": "usuarios con soporte cada mes"
+      },
+      {
+        "valor": 3,
+        "etiqueta": "productos propios"
+      }
+    ],
+    "ficha": [
+      {
+        "campo": "ocupación",
+        "valor": "Analista IT"
+      },
+      {
+        "campo": "experiencia",
+        "valor": "+{anios} años"
+      },
+      {
+        "campo": "base",
+        "valor": "La Plata, AR"
+      },
+      {
+        "campo": "stack",
+        "valor": "TypeScript · Python · SQL · Node.js · React"
+      },
+      {
+        "campo": "productos",
+        "valor": "3 propios · +10 implementados con éxito"
+      },
+      {
+        "campo": "idiomas",
+        "valor": "Español · Inglés C1"
+      }
+    ],
+    "hoy": [
+      {
+        "puesto": "Analista IT",
+        "lugar": "Municipalidad de Villa Regina",
+        "desde": "07/2024"
+      },
+      {
+        "puesto": "Referente TIC",
+        "lugar": "Provincia de Río Negro",
+        "desde": "10/2022"
+      },
+      {
+        "puesto": "Soporte IT",
+        "lugar": "TechSupportVR",
+        "desde": "01/2018"
+      }
+    ],
+    "extra": [
+      {
+        "campo": "Formación",
+        "valor": "Analista de Sistemas (en curso) · ISSD — Analista de Ciberseguridad · Google"
+      },
+      {
+        "campo": "Idiomas",
+        "valor": "Español nativo · Inglés C1"
+      }
+    ],
+    "stack": [
+      "TypeScript",
+      "Python",
+      "SQL",
+      "Node.js",
+      "React",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Fastify",
+      "Oracle",
+      "Ubuntu Server",
+      "Redes LAN",
+      "MikroTik RouterOS",
+      "VMware",
+      "Playwright",
+      "pytest",
+      "GitHub Actions",
+      "Vite",
+      "Drizzle ORM",
+      "Zod",
+      "Tkinter",
+      "API de Mercado Pago",
+      "Claude Code",
+      "Scrum",
+      "Jira",
+      "UML",
+      "OOP",
+      "Helpdesk",
+      "Excel",
+      "Microsoft Office"
+    ],
+    "contacto": {
+      "email": "emanuelgibello@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/gibelloe/",
+      "github": "https://github.com/GibelloE"
+    },
+    "bases": {
+      "titulo": "Bases técnicas profesionales",
+      "bajada": "Todos mis productos se desarrollan con el mismo método, del relevamiento a la puesta en marcha.",
+      "items": [
+        {
+          "icono": "planilla",
+          "titulo": "Análisis de requerimientos",
+          "texto": "Relevamiento con quienes lo van a usar: qué necesitan, qué no, y con qué criterio se da por cumplido."
+        },
+        {
+          "icono": "maletin",
+          "titulo": "Análisis de recursos",
+          "texto": "Equipos, red, personas, tiempos y costos disponibles, antes de elegir la solución."
+        },
+        {
+          "icono": "red",
+          "titulo": "Teoría General de Sistemas (TGS)",
+          "texto": "Cada producto es un sistema: partes que se relacionan, entradas, salidas y el entorno donde funciona."
+        },
+        {
+          "icono": "grafico",
+          "titulo": "Escalabilidad",
+          "texto": "De un puesto a varias terminales y de una empresa a muchas, sin rehacer la base."
+        },
+        {
+          "icono": "capas",
+          "titulo": "Arquitectura modular",
+          "texto": "Módulos independientes que se habilitan por separado, con las decisiones documentadas."
+        },
+        {
+          "icono": "escudo",
+          "titulo": "Seguridad desde el diseño",
+          "texto": "Cifrado, firmas, permisos y auditoría pensados desde el primer plano, no al final."
+        },
+        {
+          "icono": "comparar",
+          "titulo": "Pruebas y calidad",
+          "texto": "Pruebas automáticas en cada cambio y pilotos con usuarios reales antes de crecer."
+        },
+        {
+          "icono": "ruta",
+          "titulo": "Desarrollo incremental",
+          "texto": "Etapas cortas, con roadmap y criterios de aceptación que se pueden verificar."
+        },
+        {
+          "icono": "subir",
+          "titulo": "Integración y adaptabilidad",
+          "texto": "Pensados para convivir con lo que ya usa cada negocio, sin obligarlo a cambiar de sistema."
+        },
+        {
+          "icono": "reloj",
+          "titulo": "Mantenimiento y soporte",
+          "texto": "Actualizaciones, respaldo, registros y diagnóstico previstos desde la primera versión."
+        }
+      ]
+    }
+  },
+  "productos": [
+    {
+      "id": "cobro-flotante",
+      "nombre": "Cobro Flotante",
+      "nombreCorto": "Cobro Flotante",
+      "tipo": "App de escritorio · Windows 10/11",
+      "estado": "En uso en un comercio desde 09/2026 · v0.97",
+      "pregunta": "¿Qué es Cobro Flotante?",
+      "bajada": "Pantalla de cobro para el mostrador.",
+      "resumen": "Un ícono flotante siempre visible carga el importe. En un segundo monitor el cliente ve el total y el alias para transferir, o las formas de pago ya calculadas. Verifica la transferencia en Mercado Pago y cierra con un cartel de PAGO RECIBIDO.",
+      "problema": "En el mostrador hay que mostrarle al cliente cuánto tiene que pagar y a dónde transferir, y saber si la transferencia llegó sin estar mirando el celular.",
+      "acento": "rojo",
+      "visual": "cobro",
+      "cifras": [
+        {
+          "valor": 97,
+          "sufijo": " %",
+          "corta": "transferencias detectadas solas",
+          "etiqueta": "de las transferencias detectadas solas en la prueba piloto (64 de 66)"
+        },
+        {
+          "valor": 1400,
+          "prefijo": "+",
+          "corta": "pruebas automáticas",
+          "etiqueta": "pruebas automáticas"
+        },
+        {
+          "valor": 0,
+          "corta": "dependencias obligatorias",
+          "etiqueta": "dependencias obligatorias: sólo la librería estándar de Python"
+        },
+        {
+          "valor": 4,
+          "etiqueta": "terminales cobrando a la vez en el piloto"
+        }
+      ],
+      "stack": [
+        "Python 3.14",
+        "Tkinter",
+        "API de Mercado Pago",
+        "Ed25519",
+        "DPAPI de Windows",
+        "PyInstaller",
+        "Inno Setup",
+        "pytest",
+        "GitHub Actions"
+      ],
+      "hecho": [
+        "Sólo la librería estándar de Python: hasta el QR de pago y las firmas Ed25519 están hechos sin librerías.",
+        "La red del local corre sobre http.server y urllib, con cada pedido firmado.",
+        "Cada cambio lleva su prueba: pytest en la PC y GitHub Actions sobre Windows.",
+        "Un solo ejecutable (PyInstaller) con instalador (Inno Setup) y actualización automática firmada."
+      ],
+      "enlaces": [
+        {
+          "texto": "Descargas públicas en GitHub",
+          "url": "https://github.com/GibelloE/cobro-flotante-releases"
+        }
+      ],
+      "funciones": [
+        {
+          "icono": "moneda",
+          "pregunta": "¿Cómo cobra el vendedor?",
+          "titulo": "Cobrar desde un ícono flotante",
+          "bajada": "Un círculo siempre visible, encima de cualquier programa.",
+          "puntos": [
+            "Un clic (o Ctrl+Alt+C) abre el cuadro del importe, sin cambiar de ventana.",
+            "Enter muestra Transferencia; Shift+Enter, Formas de pago; Ctrl+Enter, el QR.",
+            "El borde del círculo es un reloj: marca cuánto falta para que se cierre la pantalla del cliente.",
+            "El segundo clic confirma el cobro: cartel de PAGO RECIBIDO, con sonido."
+          ],
+          "flujo": [
+            "Importe",
+            "Pantalla del cliente",
+            "Pago",
+            "PAGO RECIBIDO"
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/cobro-flotante/pago-recibido.webp",
+              "mini": "img/capturas/cobro-flotante/pago-recibido-mini.webp",
+              "ancho": 1280,
+              "alto": 720,
+              "alt": "Cartel de PAGO RECIBIDO por $ 29.100, sobre fondo verde.",
+              "pie": "El cartel que ve el cliente al confirmar"
+            }
+          ]
+        },
+        {
+          "icono": "monitor",
+          "pregunta": "¿Qué ve el cliente?",
+          "titulo": "La pantalla del cliente",
+          "bajada": "En un segundo monitor: el cliente mira y el vendedor decide.",
+          "puntos": [
+            "Transferencia: el total y el alias, a pantalla completa.",
+            "Formas de pago ya calculadas: débito, efectivo con descuento, cuotas con tarjeta y QR de Mercado Pago.",
+            "Formas de pago es una consulta: el vendedor toca con cuál paga y se abre esa pantalla de cobro.",
+            "Si el cliente no compra, queda registrada como consulta y no como cobro.",
+            "Se adapta a cualquier monitor, con el logo o el nombre de cada comercio."
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/cobro-flotante/formas-de-pago.webp",
+              "mini": "img/capturas/cobro-flotante/formas-de-pago-mini.webp",
+              "ancho": 1280,
+              "alto": 720,
+              "alt": "Formas de pago calculadas: efectivo con 5 % de descuento, débito o transferencia y cuotas con tarjeta.",
+              "pie": "Formas de pago, ya calculadas"
+            },
+            {
+              "src": "img/capturas/cobro-flotante/efectivo.webp",
+              "mini": "img/capturas/cobro-flotante/efectivo-mini.webp",
+              "ancho": 1280,
+              "alto": 720,
+              "alt": "Pantalla de cobro en efectivo: total de $ 27.645 con 5 % de descuento.",
+              "pie": "El vendedor eligió Efectivo"
+            }
+          ]
+        },
+        {
+          "icono": "transferencia",
+          "pregunta": "¿Cómo sabe que llegó la transferencia?",
+          "titulo": "Verificación con Mercado Pago",
+          "bajada": "Avisa que la transferencia llegó, sin mirar el celular.",
+          "puntos": [
+            "Mientras el cliente paga, busca la transferencia entrante por su importe y avisa ✓ LLEGÓ.",
+            "Deja copiado el número de operación, listo para pegarlo en el sistema de gestión.",
+            "Confirmar solo: cierra el cobro sin el segundo clic cuando el pago es seguro.",
+            "Dos transferencias iguales: avisa TRANSFERENCIA DUPLICADA y no elige ninguna. Nunca usa dos veces el mismo pago.",
+            "Si llega después de cerrar, avisa LLEGÓ TARDE y no confirma nada."
+          ],
+          "dato": {
+            "valor": "64 de 66",
+            "etiqueta": "transferencias vistas con el cobro abierto, en la prueba con cuatro terminales"
+          },
+          "capturas": [
+            {
+              "src": "img/capturas/cobro-flotante/transferencia.webp",
+              "mini": "img/capturas/cobro-flotante/transferencia-mini.webp",
+              "ancho": 1280,
+              "alto": 720,
+              "alt": "Pantalla de transferencia: total a pagar y alias, mientras se verifica el pago.",
+              "pie": "Lo que está en pantalla mientras busca la transferencia"
+            }
+          ]
+        },
+        {
+          "icono": "red",
+          "pregunta": "¿Y si hay varias cajas?",
+          "titulo": "Varias cajas, un solo local",
+          "bajada": "Una PC principal coordina a todas las terminales.",
+          "puntos": [
+            "Cada terminal se suma a la principal, y la red del local viaja firmada.",
+            "El token de Mercado Pago vive sólo en la principal, cifrado: una sola consulta para todo el local.",
+            "El alias, las formas de pago y la configuración se cargan una vez y llegan a todas las cajas.",
+            "Estado de las terminales: la versión de cada PC, si responde y si muestra algo distinto.",
+            "Llamados entre las PC, con timbre y alerta en el ícono."
+          ],
+          "dato": {
+            "valor": "52",
+            "etiqueta": "claves de configuración que viajan solas desde la principal"
+          }
+        },
+        {
+          "icono": "tv",
+          "pregunta": "¿Quién llama al próximo cliente?",
+          "titulo": "Turnero y publicidad",
+          "bajada": "La TV del local llama al próximo cliente.",
+          "puntos": [
+            "Cada vendedor llama al siguiente desde el ícono; la TV muestra el número y la caja.",
+            "TV por HDMI, o Smart TV por wifi con una página que sirve la PC principal.",
+            "Cada llamado entra con animación y sonido; arriba, una banda con el clima, un cartel y la hora.",
+            "Video publicitario en el monitor del cliente, con el turno en un recuadro del video."
+          ],
+          "flujo": [
+            "Llamar siguiente",
+            "TURNO 042",
+            "PASE A CAJA 2"
+          ]
+        },
+        {
+          "icono": "grafico",
+          "pregunta": "¿Qué queda registrado?",
+          "titulo": "Reportes y registro de cobros",
+          "bajada": "Qué se cobró, en qué caja y de qué forma.",
+          "puntos": [
+            "Cada caja anota cada cobro y cómo terminó, sin guardar nada de quien pagó.",
+            "Reportes por caja, por día y por forma de pago: hoy, ayer, la semana, el mes o un rango.",
+            "Una columna para vigilar: los confirmados a mano sin pago detectado.",
+            "Exporta a CSV para Excel y guarda el cierre de cada día."
+          ]
+        },
+        {
+          "icono": "escaner",
+          "pregunta": "¿Con qué sistema de gestión funciona?",
+          "titulo": "Adaptable a cualquier sistema de gestión",
+          "bajada": "Trabaja al lado del programa que ya usa el comercio: lee lo que está en pantalla, sin tocar su base ni su código.",
+          "puntos": [
+            "Toma el total del carrito de otro programa con el reconocimiento de texto de Windows y lo propone en el cuadro del importe.",
+            "Presupuesto para WhatsApp: lee el carrito, cruza los códigos con la lista de artículos y arma el mensaje con una plantilla editable.",
+            "Antes de proponer nada controla cantidad × valor y la suma contra el total.",
+            "Puede confirmar solo cuando detecta la ventana de fin de venta."
+          ]
+        },
+        {
+          "icono": "escudo",
+          "pregunta": "¿Qué tan seguro es?",
+          "titulo": "Seguridad, licencias y actualizaciones",
+          "bajada": "Pensado para instalarse en otros comercios.",
+          "puntos": [
+            "El alias queda sellado con el cifrado de Windows: si alguien lo cambia por fuera, vuelve al verdadero y avisa.",
+            "El programa no trae contraseñas: cada local crea las suyas y sólo se guarda su hash, sellado.",
+            "Se actualiza solo, y sólo instala versiones firmadas (Ed25519) con el SHA-256 verificado.",
+            "Licencias por módulos con un código de activación firmado y 7 días de prueba.",
+            "Respaldo de la configuración e informe para soporte, sin secretos adentro."
+          ]
+        }
+      ],
+      "destacado": "Adaptable a cualquier sistema de gestión",
+      "captura": {
+        "src": "img/capturas/cobro-flotante/transferencia.webp",
+        "mini": "img/capturas/cobro-flotante/transferencia-mini.webp",
+        "ancho": 1280,
+        "alto": 720,
+        "alt": "Pantalla del cliente de Cobro Flotante: total a pagar de $ 29.100 y el alias para transferir.",
+        "pie": "Pantalla del cliente · Transferencia"
+      }
+    },
+    {
+      "id": "frigo",
+      "nombre": "FRIGO",
+      "nombreCorto": "FRIGO",
+      "tipo": "Plataforma web · SaaS multiempresa",
+      "estado": "Demo publicada · en desarrollo activo",
+      "pregunta": "¿Qué es FRIGO?",
+      "bajada": "La fruta, de la chacra al camión.",
+      "resumen": "Plataforma web modular para empresas de producción, transporte, empaque y almacenamiento frigorífico de fruta. Cinco módulos en el orden de la producción, pensados para usarse con el celular en una mano y sin señal.",
+      "problema": [
+        "Unificar todo el proceso de producción en un mismo sistema, y abrir la posibilidad de operar con menos burocracia entre empresas que están en distintos puntos del circuito agrícola.",
+        "Por ejemplo, un productor que sólo trabaja en chacra y cuenta con FRIGO va a poder operar con mucha más facilidad con un empaque que también lo tenga. Eso va a reducir enormemente el tiempo de trabajo humano que lleva pasar una planilla a mano o convertir un Excel."
+      ],
+      "destacado": "Todo el proceso de producción en un mismo sistema",
+      "iconoDestacado": "ruta",
+      "acento": "cian",
+      "visual": "frigo",
+      "cifras": [
+        {
+          "valor": 5,
+          "corta": "módulos",
+          "etiqueta": "módulos, en el orden de la producción"
+        },
+        {
+          "valor": 82,
+          "sufijo": " / 88",
+          "corta": "tareas completas",
+          "etiqueta": "tareas del roadmap completas"
+        },
+        {
+          "valor": 95,
+          "sufijo": " %",
+          "corta": "criterios verificados",
+          "etiqueta": "de los criterios de aceptación verificados (308 de 323)"
+        },
+        {
+          "valor": 300,
+          "prefijo": "+",
+          "etiqueta": "casos de prueba, de la API y de punta a punta"
+        }
+      ],
+      "stack": [
+        "TypeScript",
+        "Node.js",
+        "Fastify",
+        "PostgreSQL 17",
+        "Row Level Security",
+        "Drizzle ORM",
+        "Zod",
+        "React 19",
+        "Vite",
+        "TanStack",
+        "Tailwind CSS",
+        "Playwright"
+      ],
+      "hecho": [
+        "Monorepo en TypeScript: la API Fastify, la web React y la consola de administración comparten los mismos esquemas Zod.",
+        "PostgreSQL 17 con Row Level Security: si un endpoint olvida filtrar por empresa, la base igual devuelve cero filas.",
+        "Pruebas con Vitest contra un Postgres real, y Playwright en escritorio, celular, tablet y sin señal.",
+        "Se despliega sola desde main y corre las migraciones al arrancar."
+      ],
+      "enlaces": [],
+      "funciones": [
+        {
+          "icono": "ruta",
+          "pregunta": "¿Cómo se organiza?",
+          "titulo": "De la chacra al camión",
+          "bajada": "Cinco módulos, en el mismo orden en que se mueve la fruta.",
+          "puntos": [
+            "La fruta pasa de un paso al siguiente: el remito de la chacra lo recibe la báscula, y Frío confirma lo que le mandan.",
+            "Inicio «Hoy en la planta»: un número grande por módulo y la línea de la producción.",
+            "Cada operación va paso por paso, a pantalla completa: una pregunta por pantalla, con botones grandes.",
+            "Cada empresa ve sólo los módulos de su licencia, y cada módulo tiene su color."
+          ],
+          "flujo": [
+            {
+              "texto": "Chacra",
+              "color": "#5fcb8a"
+            },
+            {
+              "texto": "Báscula",
+              "color": "#e3c04b"
+            },
+            {
+              "texto": "Empaque",
+              "color": "#f27a9b"
+            },
+            {
+              "texto": "Frío",
+              "color": "#5db2f0"
+            },
+            {
+              "texto": "Cargas",
+              "color": "#b49af0"
+            }
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/inicio.webp",
+              "mini": "img/capturas/frigo/inicio-mini.webp",
+              "ancho": 1280,
+              "alto": 992,
+              "alt": "Inicio de FRIGO, «Hoy en la planta»: un número por módulo y la línea de la producción, de Chacra a Cargas.",
+              "pie": "Inicio: hoy en la planta"
+            }
+          ]
+        },
+        {
+          "icono": "hoja",
+          "pregunta": "¿Qué pasa en la chacra?",
+          "titulo": "Chacra",
+          "bajada": "La cosecha en bins y el remito hasta la báscula.",
+          "puntos": [
+            "El capataz registra los bins uno por uno o por rango (del 1201 al 1240), también sin señal.",
+            "Remito interno con número correlativo por temporada; sale por WhatsApp con la ubicación de la chacra.",
+            "Plan del día: cuánta fruta se trae de cada chacra y variedad; los remitos lo van descontando.",
+            "Bins vacíos por cantidad: propios y ajenos, lo que te deben, lo que debés, bajas y cobros."
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/chacra.webp",
+              "mini": "img/capturas/frigo/chacra-mini.webp",
+              "ancho": 1280,
+              "alto": 917,
+              "alt": "Módulo Chacra: registrar cosecha, nuevo remito, plan del día y bins vacíos, con el resumen de bins y kilos.",
+              "pie": "Chacra"
+            }
+          ]
+        },
+        {
+          "icono": "balanza",
+          "pregunta": "¿Cómo entra la fruta a la planta?",
+          "titulo": "Báscula",
+          "bajada": "Por acá entra la fruta a la planta.",
+          "puntos": [
+            "Recibe los remitos de chacra y la fruta de otros productores.",
+            "Pesa el camión: kg netos = lleno − tara − bins × peso del bin vacío. Sin balanza, estima por kg por bin.",
+            "Lotes de un productor y una variedad; los fraccionados quedan abiertos y se llenan con varios camiones.",
+            "Asigna el destino de cada bin o pallet: Frío, Empaque o descarte."
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/bascula.webp",
+              "mini": "img/capturas/frigo/bascula-mini.webp",
+              "ancho": 1280,
+              "alto": 844,
+              "alt": "Módulo Báscula: recibir remito, fruta de otro productor, nuevo lote y asignar destino.",
+              "pie": "Báscula"
+            }
+          ]
+        },
+        {
+          "icono": "caja",
+          "pregunta": "¿Y en la línea de empaque?",
+          "titulo": "Empaque",
+          "bajada": "La línea de embalado, con el celular como lector.",
+          "puntos": [
+            "Mapa animado de la máquina: la cinta, los tambores y lo que cae en cada uno.",
+            "Romaneo: la cámara del celular lee la etiqueta numerada de la caja y la del tambor de un golpe.",
+            "Los pallets se llenan solos por calibre y categoría, se juntan en mixtos y se cierran con el conteo real.",
+            "Premios por embalador con un valor por tipo de caja, y el saldo de cada lote."
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/empaque.webp",
+              "mini": "img/capturas/frigo/empaque-mini.webp",
+              "ancho": 1280,
+              "alto": 1644,
+              "alt": "Mapa animado de la máquina de empaque: la cinta con fruta y los tambores con su calibre y categoría.",
+              "pie": "Empaque: el mapa de la máquina"
+            }
+          ]
+        },
+        {
+          "icono": "copo",
+          "pregunta": "¿Dónde está cada pallet?",
+          "titulo": "Frío",
+          "bajada": "El mapa de las cámaras, pallet por pallet.",
+          "puntos": [
+            "Mapa interactivo: arrastrar y soltar, pilas, posiciones no utilizables y cargas con su color.",
+            "Túneles de enfriado con sus horas y avisos; capacidad real y plano general del predio a escala.",
+            "Modo autoelevador en la tablet: tocar lo que se lleva y tocar dónde se deja.",
+            "Órdenes de retiro desde cualquier sector, con avisos aunque la app esté cerrada.",
+            "Fruta en cámaras: filtros y un carrito para armar cargas."
+          ],
+          "dato": {
+            "valor": "32 de 32",
+            "etiqueta": "tareas del módulo completas: es el más desarrollado"
+          },
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/mapa.webp",
+              "mini": "img/capturas/frigo/mapa-mini.webp",
+              "ancho": 1280,
+              "alto": 720,
+              "alt": "Módulo Frío: el mapa de la cámara con sus medidas, ocupación y las herramientas para recibir, mover y armar túneles.",
+              "pie": "Frío: el mapa de una cámara"
+            }
+          ]
+        },
+        {
+          "icono": "camion",
+          "pregunta": "¿Cómo sale la fruta?",
+          "titulo": "Cargas",
+          "bajada": "Del pedido al camión en ruta.",
+          "puntos": [
+            "La carga se arma con cliente, transporte (camión o contenedor) y pedido.",
+            "Cada pallet se lee con el celular al subir; al despachar, salen de las cámaras los leídos.",
+            "Seguimiento de los camiones por GPS en el mapa, con Leaflet y OpenStreetMap.",
+            "Termógrafo del contenedor y habilitación de destino: si el destino la exige, la carga no sale sin ella."
+          ],
+          "flujo": [
+            "Armar la carga",
+            "Leer los pallets",
+            "Despachar",
+            "Entregada"
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/cargas.webp",
+              "mini": "img/capturas/frigo/cargas-mini.webp",
+              "ancho": 1280,
+              "alto": 1695,
+              "alt": "Módulo Cargas: el mapa con los camiones en viaje y sus cargas.",
+              "pie": "Cargas en viaje"
+            }
+          ]
+        },
+        {
+          "icono": "senal",
+          "pregunta": "¿Y si no hay señal?",
+          "titulo": "Sin señal y en vivo",
+          "bajada": "Adentro de una cámara frigorífica no hay señal.",
+          "puntos": [
+            "La app abre y se recarga sin conexión, con un service worker.",
+            "Registrar, mover y retirar entran a una cola en el celular que se sube sola, en orden, al volver la señal.",
+            "Cada operación lleva un id generado en el celular: un reenvío nunca se aplica dos veces.",
+            "Mapa en vivo: cada cambio se avisa con NOTIFY de Postgres y llega por Server-Sent Events.",
+            "Avisos con Web Push estándar, sin servicios pagos ni app de tienda."
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/cosecha.webp",
+              "mini": "img/capturas/frigo/cosecha-mini.webp",
+              "ancho": 1280,
+              "alto": 720,
+              "alt": "Registrar cosecha: chacra, cuadro, tipo de bin y los números uno por uno o por rango.",
+              "pie": "Registrar cosecha, también sin señal"
+            }
+          ]
+        },
+        {
+          "icono": "capas",
+          "pregunta": "¿Cómo se aísla cada empresa?",
+          "titulo": "Plataforma SaaS y seguridad",
+          "bajada": "Muchas empresas en una sola base, cada una aislada.",
+          "puntos": [
+            "Multiempresa con tenant_id en cada tabla y Row Level Security de PostgreSQL como segunda barrera.",
+            "Roles de sistema y a medida; los permisos se leen en cada request y las operaciones críticas quedan auditadas.",
+            "Consola de administración con segundo factor (TOTP): empresas, licencias, módulos y planes con límites.",
+            "Prueba de 30 días; una licencia vencida pasa a sólo lectura durante la gracia antes de bloquear.",
+            "La base garantiza el mapa: un índice único impide dos pallets en la misma posición."
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/roles.webp",
+              "mini": "img/capturas/frigo/roles-mini.webp",
+              "ancho": 1280,
+              "alto": 964,
+              "alt": "Roles de FRIGO: administrador, encargado, operario, consulta y los de cada sector, con sus permisos.",
+              "pie": "Roles y permisos"
+            }
+          ]
+        }
+      ],
+      "captura": {
+        "src": "img/capturas/frigo/frio.webp",
+        "mini": "img/capturas/frigo/frio-mini.webp",
+        "ancho": 1280,
+        "alto": 801,
+        "alt": "Modo autoelevador de FRIGO: el mapa de una cámara con sus pallets numerados y la lista de lo que falta ubicar.",
+        "pie": "Modo autoelevador · datos de la demo"
+      },
+      "especial": {
+        "id": "frigo-vision",
+        "nombre": "FRIGO Visión",
+        "lema": "Control de calidad impulsado por IA",
+        "tipo": "Módulo extra · en investigación",
+        "bajada": "El analizador de fallas de FRIGO: cámaras en vivo sobre la línea de producción.",
+        "puntos": [
+          "Cámaras fijas miran la fruta mientras pasa por la línea y miden las fallas visibles: golpe, rameo, color, asolado y daño de insecto.",
+          "Cruza cada medición con lo que FRIGO ya sabe: el lote, el productor, el calibre y la categoría de cada tambor.",
+          "Marca posibles plagas para revisar: la IA propone y una persona de calidad decide.",
+          "Avisa cuando la línea se desvía, con un gráfico de control por tambor cada 15 minutos.",
+          "Compara lo declarado con lo que vio la cámara, productor por productor, y a qué destinos puede ir cada lote."
+        ],
+        "nota": "Mide lotes: no clasifica ni expulsa fruta, y no reemplaza la inspección oficial.",
+        "etapas": [
+          "Propuesta e investigación",
+          "Banco",
+          "Sombra",
+          "Asesoramiento",
+          "Régimen"
+        ],
+        "etapaActual": 1,
+        "estado": "Etapa 1 de 5 cumplida",
+        "capturas": [
+          {
+            "src": "img/capturas/frigo/vision.webp",
+            "mini": "img/capturas/frigo/vision-mini.webp",
+            "ancho": 1280,
+            "alto": 720,
+            "alt": "Panel de ejemplo de FRIGO Visión: fruta vista, porcentaje con defecto, cuatro cámaras en vivo y los defectos por tipo.",
+            "pie": "Panel de ejemplo · simulación: ninguna cifra es real",
+            "sello": "Simulación"
+          }
+        ]
+      }
+    },
+    {
+      "id": "preparador-de-listas",
+      "nombre": "Preparador de listas",
+      "nombreCorto": "Preparador",
+      "alias": "Automatizador de Excel",
+      "tipo": "Automatización de escritorio · Windows",
+      "estado": "En uso · próxima etapa en diseño",
+      "pregunta": "¿Qué es el Preparador de listas?",
+      "bajada": "Listas de precios de proveedores, sin trabajo manual.",
+      "resumen": "Cada proveedor manda su lista de precios a su manera: un Excel, un ZIP, un CSV, un DBF. El preparador reconoce cada descarga, la convierte al formato que espera el sistema de gestión del negocio —el que sea—, controla los precios contra la lista anterior y automatiza la actualización.",
+      "problema": "Cada proveedor manda su lista de precios a su manera, y muchas se pasaban a mano al sistema de gestión. Sin nadie mirando, cambiar precios mal es el riesgo principal.",
+      "acento": "ambar",
+      "visual": "listas",
+      "cifras": [
+        {
+          "valor": 95,
+          "sufijo": " %",
+          "corta": "artículos cubiertos",
+          "etiqueta": "de los artículos de las listas que se cargaban a mano, cubiertos con receta"
+        },
+        {
+          "valor": 18,
+          "sufijo": " de 19",
+          "corta": "recetas validadas",
+          "etiqueta": "recetas validadas iguales a lo hecho a mano"
+        },
+        {
+          "valor": 47,
+          "corta": "proveedores activos",
+          "etiqueta": "proveedores activos"
+        },
+        {
+          "valor": 22769,
+          "etiqueta": "artículos en 52 listas de precios"
+        }
+      ],
+      "stack": [
+        "Python",
+        "Excel (.xlsx / .xls)",
+        "CSV",
+        "DBF",
+        "ZIP",
+        "FTP",
+        "Automatización de ventanas de Windows"
+      ],
+      "hecho": [
+        "Una receta por proveedor: describe qué archivo llega, cómo se transforma y cómo tiene que quedar.",
+        "Cada receta se valida comparando su salida con la lista hecha a mano, byte a byte.",
+        "Se adapta a cualquier sistema de gestión: la receta dice en qué formato, con qué nombre y dónde lo espera cada uno.",
+        "Varias PC comparten el estado y se turnan con un semáforo para no pisarse."
+      ],
+      "enlaces": [],
+      "funciones": [
+        {
+          "icono": "planilla",
+          "pregunta": "¿Cómo deja lista cada lista?",
+          "titulo": "Una receta por proveedor",
+          "bajada": "Cada lista llega distinta; la receta sabe cómo dejarla.",
+          "puntos": [
+            "Reconoce cada descarga: .zip, .xlsx, .xls, .csv, .dbf o .txt.",
+            "Aplica la receta del proveedor: qué archivo es, cómo se transforma, con qué nombre y en qué carpeta queda.",
+            "La deja como la espera el sistema de gestión (.dbf, .csv, .txt o .xlsx), sin pasos a mano.",
+            "19 de las 35 listas que se cargaban a mano ya tienen receta."
+          ],
+          "flujo": [
+            "Descarga",
+            "Receta",
+            "Control",
+            "Lista preparada"
+          ],
+          "dato": {
+            "valor": "95 %",
+            "etiqueta": "de los artículos de esas listas, cubiertos"
+          }
+        },
+        {
+          "icono": "escudo",
+          "pregunta": "¿Qué controla antes de tocar precios?",
+          "titulo": "Control antes de tocar precios",
+          "bajada": "Sin nadie mirando, cambiar precios mal es el riesgo principal.",
+          "puntos": [
+            "Controla cada lista contra la anterior antes de dejarla pasar.",
+            "Si faltan más del 20 % de los códigos, o la lista parece filtrada, no pasa.",
+            "Si cambió el formato, no la reconoce y queda en la bandeja.",
+            "Los cambios de precio de más de ±30 % se avisan.",
+            "La lista anterior queda guardada en cada cambio: siempre se puede volver atrás."
+          ]
+        },
+        {
+          "icono": "comparar",
+          "pregunta": "¿Cómo se sabe que está bien?",
+          "titulo": "Verificado contra el trabajo manual",
+          "bajada": "Tiene que dar exactamente lo mismo que a mano.",
+          "puntos": [
+            "Cada receta se valida comparando su salida con la lista que se había pasado a mano.",
+            "15 listas salieron idénticas byte a byte, y 3 con el mismo contenido.",
+            "Un tablero muestra el avance: el estado de cada lista, los artículos cubiertos y el último control."
+          ],
+          "dato": {
+            "valor": "18 de 19",
+            "etiqueta": "recetas validadas contra lo hecho a mano"
+          }
+        },
+        {
+          "icono": "subir",
+          "pregunta": "¿Quién actualiza el sistema?",
+          "titulo": "Actualización automática",
+          "bajada": "Hace en el sistema de gestión lo que antes hacía una persona, lista por lista.",
+          "puntos": [
+            "Recorre en orden las listas que el sistema baja del servidor de cada proveedor.",
+            "Maneja su ventana: busca el proveedor en la grilla, contesta los carteles y confirma que quedó registrada.",
+            "Si un servidor no responde, saltea ese proveedor y lo reintenta al final.",
+            "Ante un error del programa, frena y no toca nada: ahí decide una persona.",
+            "Al terminar, un resumen: cuánto tardó, cuánto cambió cada proveedor y qué no se pudo."
+          ],
+          "dato": {
+            "valor": "16",
+            "etiqueta": "listas se actualizan así, sin cargarlas a mano"
+          }
+        },
+        {
+          "icono": "reloj",
+          "pregunta": "¿Cuándo corre?",
+          "titulo": "A una hora fija, sin chocar entre PC",
+          "bajada": "Arranca solo, y sólo cuando es seguro.",
+          "puntos": [
+            "«Subir solo»: se eligen la hora y los días, y una sola PC lo corre.",
+            "Semáforo compartido: si otra PC está actualizando, espera su turno.",
+            "Antes de empezar controla que la sesión no esté bloqueada, que el sistema esté abierto y que nadie esté actualizando.",
+            "Como usa el mouse, avisa con una cuenta regresiva y un botón Cancelar.",
+            "Lo que quedó pendiente se ve en un botón flotante, en rojo."
+          ]
+        },
+        {
+          "icono": "amanecer",
+          "pregunta": "¿Qué sigue?",
+          "titulo": "Lo que sigue: la mañana completa",
+          "estado": "En diseño",
+          "bajada": "Bajar, preparar, actualizar e informar, sin nadie.",
+          "puntos": [
+            "Descarga sola: link directo, portal con usuario y clave (navegador sin pantalla) o adjuntos del mail.",
+            "Captcha o doble factor no se esquivan: ese proveedor queda a mano.",
+            "Con demasiados precios raros, la lista se prepara pero no se actualiza: espera a una persona.",
+            "Dos semanas en ensayo, comparando con lo hecho a mano, y se prende de a un proveedor."
+          ],
+          "flujo": [
+            "07:30 Subir FTP",
+            "07:45 Bajar listas",
+            "Preparar",
+            "Actualizar",
+            "Informe"
+          ]
+        }
+      ],
+      "destacado": "Adaptable a cualquier sistema de gestión"
+    }
+  ]
+}

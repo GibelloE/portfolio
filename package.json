@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-emanuel-gibello",
+  "version": "0.1.0",
+  "description": "Portfolio personal de Emanuel Gibello: HTML, CSS y JavaScript, servido con Node.js sin dependencias.",
+  "private": true,
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "celular": "node server.js --red",
+    "build": "node build.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
