@@ -20,23 +20,31 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+# Van en dos trabajos, como recomienda GitHub: la publicación arranca recién cuando el sitio
+# armado terminó de subirse. En uno solo, a veces fallaba porque todavía no lo encontraba
+# ("No artifacts named github-pages were found").
 jobs:
+  armar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Traer el código
+        uses: actions/checkout@v7
+      - name: Preparar Pages
+        uses: actions/configure-pages@v6
+      - name: Armar la versión sin servidor
+        run: node build.mjs
+      - name: Subir el sitio armado
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
   publicar:
+    needs: armar
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.despliegue.outputs.page_url }}
     steps:
-      - name: Traer el código
-        uses: actions/checkout@v4
-      - name: Armar la versión sin servidor
-        run: node build.mjs
-      - name: Preparar Pages
-        uses: actions/configure-pages@v5
-      - name: Subir el sitio
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
       - name: Publicar
         id: despliegue
         uses: actions/deploy-pages@v5
