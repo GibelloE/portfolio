@@ -31,7 +31,7 @@
       {
         "valor": 100,
         "prefijo": "+",
-        "etiqueta": "usuarios con soporte cada mes"
+        "etiqueta": "usuarios en los entornos donde di soporte"
       },
       {
         "valor": 3,
@@ -76,9 +76,12 @@
         ]
       },
       {
-        "puesto": "Soporte técnico",
-        "lugar": "Por cuenta propia · eventual",
-        "desde": "01/2018"
+        "puesto": "Soporte técnico Nivel 2",
+        "lugar": "Servicio independiente para grandes empresas y particulares",
+        "desde": "01/2018",
+        "tareas": [
+          "Diagnóstico y resolución de incidentes que exceden el primer nivel de atención."
+        ]
       }
     ],
     "antes": [
@@ -91,7 +94,8 @@
       {
         "puesto": "Referente TIC",
         "lugar": "Provincia de Río Negro",
-        "desde": "10/2022"
+        "desde": "10/2022",
+        "hasta": "03/2025"
       }
     ],
     "extra": [
