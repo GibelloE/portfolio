@@ -76,11 +76,12 @@
         ]
       },
       {
-        "puesto": "Soporte técnico Nivel 2",
+        "puesto": "Soporte técnico Nivel 1 y 2",
         "lugar": "Servicio independiente para grandes empresas y particulares",
         "desde": "01/2018",
         "tareas": [
-          "Diagnóstico y resolución de incidentes que exceden el primer nivel de atención."
+          "Nivel 1: atención directa al usuario.",
+          "Nivel 2: diagnóstico y resolución de los incidentes más complejos."
         ]
       }
     ],
