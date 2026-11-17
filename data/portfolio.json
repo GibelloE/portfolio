@@ -67,18 +67,31 @@
     "hoy": [
       {
         "puesto": "Analista IT",
+        "lugar": "Gibello Repuestos Ford · empresa familiar con 60 años de trayectoria",
+        "cuando": "desde hace varios años · hoy a tiempo completo",
+        "tareas": [
+          "Soluciones IT y automatización del flujo de trabajo.",
+          "Sitio web: diseño, desarrollo, implementación y mantenimiento.",
+          "Posicionamiento en internet: SEO, Perfil de Empresa de Google y redes sociales."
+        ]
+      },
+      {
+        "puesto": "Soporte técnico",
+        "lugar": "Por cuenta propia · eventual",
+        "desde": "01/2018"
+      }
+    ],
+    "antes": [
+      {
+        "puesto": "Analista IT",
         "lugar": "Municipalidad de Villa Regina",
-        "desde": "07/2024"
+        "desde": "07/2024",
+        "hasta": "12/2025"
       },
       {
         "puesto": "Referente TIC",
         "lugar": "Provincia de Río Negro",
         "desde": "10/2022"
-      },
-      {
-        "puesto": "Soporte IT",
-        "lugar": "TechSupportVR",
-        "desde": "01/2018"
       }
     ],
     "extra": [

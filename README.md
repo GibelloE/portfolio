@@ -48,6 +48,10 @@ En `data/portfolio.json`:
 - **`perfil.stack`** es una sola lista, de lo más importante a lo menos. Las siete primeras van encendidas.
 - **`perfil.experienciaDesde`** es la fecha desde la que se cuentan los años de experiencia: se calculan
   al día (`public/js/anios.js`), no hay que actualizarlos a mano.
+- **`perfil.hoy`** son los trabajos actuales (la tapa "¿Qué hago hoy?"): `puesto`, `lugar`, `desde` y, si se
+  quiere detallar, `tareas`. Con `cuando` se escribe el período a mano ("desde hace varios años…") en vez de
+  armarlo con las fechas. **`perfil.antes`** son los que ya terminaron: llevan además `hasta` (sin `hasta` no
+  se muestra ninguna fecha).
 - Cada producto tiene su `pregunta` (lo que dice la tapa), sus `cifras` y sus `funciones`; cada función
   tiene la `pregunta` de su tapa, el `titulo`, los `puntos` y, si hace falta, un `flujo` o un `dato`.
 - `acento` es el color de neón del producto: `rojo`, `cian` o `ambar`.

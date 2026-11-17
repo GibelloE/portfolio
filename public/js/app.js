@@ -182,6 +182,25 @@ function pintarBases(bases) {
 
 /* ---------- Sobre mí: tres tapas con lo básico del CV ---------- */
 
+/**
+ * Un trabajo: puesto, lugar, cuándo y, si se detallan, lo que se hace ahí.
+ * El "cuándo" sale de `desde` y `hasta`, salvo que el dato traiga su propio texto en `cuando`.
+ * De un trabajo ya terminado sin fecha de fin no se dice nada: "desde…" daría a entender que sigue.
+ */
+function trabajo(item, terminado = false) {
+  let cuando = item.cuando ?? '';
+  if (!cuando && item.hasta) cuando = item.desde ? `${item.desde} – ${item.hasta}` : `hasta ${item.hasta}`;
+  else if (!cuando && item.desde && !terminado) cuando = `desde ${item.desde}`;
+  return h(
+    'li',
+    {},
+    h('strong', { text: item.puesto }),
+    item.lugar && h('span', { text: item.lugar }),
+    cuando && h('small', { text: cuando }),
+    item.tareas?.length > 0 && h('ul', { class: 'hoy__tareas' }, item.tareas.map((tarea) => h('li', { text: tarea }))),
+  );
+}
+
 function pintarSobreMi(perfil) {
   const quien = destape({
     pregunta: '¿Quién soy?',
@@ -203,13 +222,15 @@ function pintarSobreMi(perfil) {
     adornos: [icono('maletin', 'destape__icono')],
     contenido: escalonar([
       h('ul', { class: 'cifras cifras--chicas' }, anios.el),
-      h(
-        'ol',
-        { class: 'hoy' },
-        perfil.hoy.map((item) =>
-          h('li', {}, h('strong', { text: item.puesto }), h('span', { text: item.lugar }), h('small', { text: `desde ${item.desde}` })),
+      h('ol', { class: 'hoy' }, perfil.hoy.map((item) => trabajo(item))),
+      // Los trabajos que ya terminaron van aparte, más apagados.
+      perfil.antes?.length > 0 &&
+        h(
+          'div',
+          { class: 'hoy-antes' },
+          h('p', { class: 'rotulo', text: 'Antes' }),
+          h('ol', { class: 'hoy hoy--antes' }, perfil.antes.map((item) => trabajo(item, true))),
         ),
-      ),
     ]),
     direccion: 'der',
     clase: 'destape--sobre',
