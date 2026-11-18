@@ -3358,7 +3358,8 @@ html[data-idioma="en"]:not(.con-contenido) [data-dato] {
 .vf-linea {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  /* Cinco columnas iguales, diga lo que diga cada rótulo (en inglés, "Weighbridge" es más ancho). */
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   /* El punto viaja dentro de una capa que se corre entera: que no ensanche la página. */
   overflow-x: clip;
 }
@@ -3377,6 +3378,8 @@ html[data-idioma="en"]:not(.con-contenido) [data-dato] {
   position: relative;
   display: grid;
   justify-items: center;
+  /* Un rótulo más ancho que su columna se pasa parejo hacia los dos lados: el círculo no se corre. */
+  justify-content: center;
   gap: 2cqw;
 }
 
@@ -3392,6 +3395,7 @@ html[data-idioma="en"]:not(.con-contenido) [data-dato] {
 }
 
 .vf-nodo span {
+  white-space: nowrap;
   font-size: 2.9cqw;
   letter-spacing: 0.06em;
   text-transform: uppercase;

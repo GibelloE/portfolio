@@ -200,7 +200,7 @@ export const TEXTOS = {
     'v.alias': 'ALIAS',
     'v.aliasEjemplo': 'your.alias.mp',
     'v.recibido': 'PAYMENT RECEIVED',
-    'v.modulos': ['Orchard', 'Scale', 'Packing', 'Cold', 'Shipping'],
+    'v.modulos': ['Farm', 'Weighbridge', 'Packing', 'Cold', 'Loads'],
     'v.camara': 'COLD ROOM 1',
     'v.ocupada': '{n}% full',
     'v.estaciones': ['Download', 'Recipe', 'Check', 'System'],

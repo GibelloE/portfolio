@@ -54,7 +54,7 @@
       },
       {
         "campo": "soft skills",
-        "valor": "Effective communication · Teamwork · Problem solving · Rapport with users"
+        "valor": "Effective communication · Teamwork · Problem solving · Approachability"
       },
       {
         "campo": "products",
@@ -438,11 +438,11 @@
       "tipo": "Web platform · multi-tenant SaaS",
       "estado": "Demo live · in active development",
       "pregunta": "What is FRIGO?",
-      "bajada": "Fruit, from the orchard to the truck.",
+      "bajada": "Fruit, from the farm to the truck.",
       "resumen": "A modular web platform for companies that grow, haul, pack and cold-store fruit. Five modules in the order of production, designed to be used with a phone in one hand and no signal.",
       "problema": [
         "Bringing the whole production process into a single system, and opening the door to working with less paperwork between companies at different points of the fruit supply chain.",
-        "For example, a grower who only works the orchard and has FRIGO will be able to work far more easily with a packing house that also has it. That will greatly cut the human hours it takes to retype a form by hand or convert an Excel file."
+        "For example, a grower who only works the farm and has FRIGO will be able to work far more easily with a packing house that also has it. That will greatly cut the human hours it takes to retype a form by hand or convert an Excel file."
       ],
       "destacado": "The whole production process in a single system",
       "iconoDestacado": "ruta",
@@ -497,21 +497,21 @@
         {
           "icono": "ruta",
           "pregunta": "How is it organized?",
-          "titulo": "From the orchard to the truck",
+          "titulo": "From the farm to the truck",
           "bajada": "Five modules, in the same order the fruit moves.",
           "puntos": [
-            "The fruit goes from one step to the next: the orchard's delivery note is received at the scale, and Cold storage confirms what it is sent.",
+            "The fruit goes from one step to the next: the farm's delivery note is received at the weighbridge, and Cold storage confirms what it is sent.",
             "Home screen «Hoy en la planta» (Today at the plant): one big number per module and the production line.",
             "Each operation goes step by step, full screen: one question per screen, with big buttons.",
             "Each company sees only the modules in its license, and each module has its own color."
           ],
           "flujo": [
             {
-              "texto": "Orchard",
+              "texto": "Farm",
               "color": "#5fcb8a"
             },
             {
-              "texto": "Scale",
+              "texto": "Weighbridge",
               "color": "#e3c04b"
             },
             {
@@ -523,7 +523,7 @@
               "color": "#5db2f0"
             },
             {
-              "texto": "Shipping",
+              "texto": "Loads",
               "color": "#b49af0"
             }
           ],
@@ -533,20 +533,20 @@
               "mini": "img/capturas/frigo/inicio-mini.webp",
               "ancho": 1280,
               "alto": 992,
-              "alt": "FRIGO home screen, «Hoy en la planta» (Today at the plant): one number per module and the production line, from Orchard to Shipping.",
+              "alt": "FRIGO home screen, «Hoy en la planta» (Today at the plant): one number per module and the production line, from Farm to Loads.",
               "pie": "Home: today at the plant"
             }
           ]
         },
         {
           "icono": "hoja",
-          "pregunta": "What happens in the orchard?",
-          "titulo": "Orchard (Chacra)",
-          "bajada": "The harvest in bins and the delivery note all the way to the scale.",
+          "pregunta": "What happens on the farm?",
+          "titulo": "Farm (Chacra)",
+          "bajada": "The harvest in bins and the delivery note all the way to the weighbridge.",
           "puntos": [
             "The foreman logs the bins one by one or by range (1201 to 1240), even with no signal.",
-            "Internal delivery note with a sequential number per season; it goes out over WhatsApp with the orchard's location.",
-            "Daily plan: how much fruit comes in from each orchard and variety; the delivery notes count it down.",
+            "Internal delivery note with a sequential number per season; it goes out over WhatsApp with the farm's location.",
+            "Daily plan: how much fruit comes in from each farm and variety; the delivery notes count it down.",
             "Empty bins by quantity: own and third-party, what you are owed, what you owe, write-offs and charges."
           ],
           "capturas": [
@@ -555,18 +555,18 @@
               "mini": "img/capturas/frigo/chacra-mini.webp",
               "ancho": 1280,
               "alto": 917,
-              "alt": "Orchard module: log harvest, new delivery note, daily plan and empty bins, with the summary of bins and kilos.",
-              "pie": "Orchard"
+              "alt": "Farm module: log harvest, new delivery note, daily plan and empty bins, with the summary of bins and kilos.",
+              "pie": "Farm"
             }
           ]
         },
         {
           "icono": "balanza",
           "pregunta": "How does the fruit enter the plant?",
-          "titulo": "Scale (Báscula)",
+          "titulo": "Weighbridge (Báscula)",
           "bajada": "This is where the fruit enters the plant.",
           "puntos": [
-            "It receives the orchard delivery notes and the fruit from other growers.",
+            "It receives the farm delivery notes and the fruit from other growers.",
             "It weighs the truck: net kg = loaded − tare − bins × empty bin weight. Without a scale, it estimates by kg per bin.",
             "Lots of one grower and one variety; split lots stay open and are filled across several trucks.",
             "It assigns the destination of each bin or pallet: Cold storage, Packing or discard."
@@ -577,8 +577,8 @@
               "mini": "img/capturas/frigo/bascula-mini.webp",
               "ancho": 1280,
               "alto": 844,
-              "alt": "Scale module: receive delivery note, fruit from another grower, new lot and assign destination.",
-              "pie": "Scale"
+              "alt": "Weighbridge module: receive delivery note, fruit from another grower, new lot and assign destination.",
+              "pie": "Weighbridge"
             }
           ]
         },
@@ -610,11 +610,11 @@
           "titulo": "Cold storage (Frío)",
           "bajada": "The map of the cold rooms, pallet by pallet.",
           "puntos": [
-            "Interactive map: drag and drop, stacks, unusable positions and shipments in their own color.",
+            "Interactive map: drag and drop, stacks, unusable positions and loads in their own color.",
             "Cooling tunnels with their hours and alerts; real capacity and a to-scale plan of the whole site.",
             "Forklift mode on the tablet: tap what you are carrying, then tap where you drop it.",
             "Retrieval orders from any area, with notifications even when the app is closed.",
-            "Fruit in the cold rooms: filters and a cart for building shipments."
+            "Fruit in the cold rooms: filters and a cart for building loads."
           ],
           "dato": {
             "valor": "32 of 32",
@@ -634,16 +634,16 @@
         {
           "icono": "camion",
           "pregunta": "How does the fruit leave?",
-          "titulo": "Shipping (Cargas)",
+          "titulo": "Loads (Cargas)",
           "bajada": "From the order to the truck on the road.",
           "puntos": [
-            "A shipment is built from a customer, a transport (truck or container) and an order.",
+            "A load is built from a customer, a transport (truck or container) and an order.",
             "Each pallet is scanned with the phone as it is loaded; on dispatch, the scanned ones leave the cold rooms.",
             "GPS tracking of the trucks on the map, with Leaflet and OpenStreetMap.",
-            "Container temperature recorder and destination clearance: if the destination requires it, the shipment does not leave without it."
+            "Container temperature recorder and destination clearance: if the destination requires it, the load does not leave without it."
           ],
           "flujo": [
-            "Build the shipment",
+            "Build the load",
             "Scan the pallets",
             "Dispatch",
             "Delivered"
@@ -654,8 +654,8 @@
               "mini": "img/capturas/frigo/cargas-mini.webp",
               "ancho": 1280,
               "alto": 1695,
-              "alt": "Shipping module: the map with the trucks on the road and their shipments.",
-              "pie": "Shipments on the road"
+              "alt": "Loads module: the map with the trucks on the road and their loads.",
+              "pie": "Loads on the road"
             }
           ]
         },
@@ -677,7 +677,7 @@
               "mini": "img/capturas/frigo/cosecha-mini.webp",
               "ancho": 1280,
               "alto": 720,
-              "alt": "Log harvest: orchard, block, bin type and the numbers one by one or by range.",
+              "alt": "Log harvest: farm, block, bin type and the numbers one by one or by range.",
               "pie": "Logging the harvest, even with no signal"
             }
           ]
