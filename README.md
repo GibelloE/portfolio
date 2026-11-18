@@ -2,9 +2,9 @@
 
 Página personal: HTML, CSS y JavaScript sin librerías, servida con Node.js sin dependencias.
 Muestra lo básico del CV y tres productos (Cobro Flotante, FRIGO y Preparador de listas),
-cada uno con el resumen animado de sus funciones.
+cada uno con el resumen animado de sus funciones. Está en español y en inglés.
 
-**En línea:** https://gibelloe.github.io/portfolio/
+**En línea:** https://gibelloe.github.io/portfolio/ · en inglés: https://gibelloe.github.io/portfolio/?lang=en
 
 ## Abrirla
 
@@ -32,7 +32,9 @@ comando muestra siempre la actual. Sólo se ve dentro de esa red, y mientras el 
 
 | Qué | Dónde |
 | --- | --- |
-| Textos, cifras, stack, productos y sus funciones | `data/portfolio.json` (se vuelve a leer solo: alcanza con recargar la página) |
+| Textos, cifras, stack, productos y sus funciones | `data/portfolio.json` en español y `data/portfolio.en.json` en inglés (se vuelven a leer solos: alcanza con recargar la página) |
+| Los textos de la interfaz (menú, botones, pistas de las tapas) en los dos idiomas | `public/js/textos.js` |
+| El idioma y el interruptor ES / EN | `public/js/idioma.js` y `public/js/pre.js` |
 | Estructura de la página | `public/index.html` |
 | Colores, fuentes y animaciones | `public/css/styles.css` (las variables están arriba de todo) |
 | Las tapas (bóvedas) que se corren al pasar el mouse o al tocarlas | `public/js/destape.js` |
@@ -40,11 +42,36 @@ comando muestra siempre la actual. Sólo se ve dentro de esa red, y mientras el 
 | Las capturas reales y la lupa que las amplía | `public/js/capturas.js`, imágenes en `public/img/capturas/` |
 | Los dibujos animados de cada producto | `public/js/visuales.js` y la sección 9 de `styles.css` |
 | Lo que se abre a pantalla completa en el celular, y el botón Atrás | `public/js/interior.js` y `public/js/historial.js` |
-| El servidor y `/api/portfolio.json` | `server.js` |
+| El servidor, `/api/portfolio.json` y `/api/portfolio.en.json` | `server.js` |
 | La versión sin servidor que se publica en GitHub Pages | `build.mjs` y `.github/workflows/pages.yml` |
+| El control de que los dos idiomas coincidan | `revisar.mjs` (`npm run revisar`) |
 
-En `data/portfolio.json`:
+## Los dos idiomas
 
+El interruptor **ES / EN** del menú cambia toda la página sin recargarla. Arranca en español; en inglés
+si la dirección lo pide (`…/?lang=en`, que es el enlace para compartir) o si la persona lo eligió la
+última vez (queda recordado en su navegador).
+
+- **El contenido** está en dos archivos con la misma forma: `data/portfolio.json` (español, el original)
+  y `data/portfolio.en.json` (inglés). **Al cambiar un texto hay que cambiarlo en los dos.** Los números,
+  las imágenes, los íconos y los enlaces tienen que ser iguales en ambos.
+- **`npm run revisar`** avisa si no coinciden (una función que está en un idioma y no en el otro, un número
+  distinto). `npm run build` hace el mismo control y no publica si falla; `npm start` lo avisa en la consola.
+  Lo que no puede detectar es una traducción que quedó vieja: eso hay que mirarlo a mano.
+- **Los textos de la interfaz** (el menú, los botones, "Pasá el mouse", los carteles de los dibujos) están en
+  `public/js/textos.js`, una lista por idioma con las mismas claves. En el HTML, un elemento con
+  `data-t="clave"` toma su texto de ahí (y con `data-t-attr="aria-label:clave"`, un atributo).
+- **Los nombres de los productos no se traducen.** Tampoco lo que dicen las capturas, que son del programa
+  real: en inglés el texto aclara qué significa («Hoy en la planta» (Today at the plant)).
+- Los miles se escriben distinto (22.769 y 22,769) y el "más" cambia de lado ("+10" y "10+"): en inglés va
+  como `sufijo` en vez de `prefijo`.
+
+## El contenido
+
+En `data/portfolio.json` (y lo mismo, traducido, en `data/portfolio.en.json`):
+
+- **`perfil.ficha`** es la ficha del inicio: cada renglón tiene su `campo` y su `valor` (`{anios}` se reemplaza
+  por los años de experiencia).
 - **`perfil.stack`** es una sola lista, de lo más importante a lo menos. Las siete primeras van encendidas.
 - **`perfil.experienciaDesde`** es la fecha desde la que se cuentan los años de experiencia: se calculan
   al día (`public/js/anios.js`), no hay que actualizarlos a mano.
@@ -83,8 +110,12 @@ del cliente del programa con datos inventados. El Preparador de listas todavía 
   (las tapas parecerían rotas): se suaviza. El botón **Pausar** del menú frena todo y lo recuerda.
 - **Detalle de un producto**: un diálogo a pantalla completa. Queda en la dirección (`#ver-frigo`), así
   que se puede compartir el enlace, y el botón Atrás lo cierra.
-- **Servidor**: sirve `public/`, entrega el contenido en `/api/portfolio.json` y manda cabeceras de
-  seguridad (entre ellas una política de contenido que sólo deja cargar scripts y estilos propios).
+- **Idioma** (`idioma.js`): al cambiarlo, la página vuelve a dibujar su contenido con el otro archivo, sin
+  las animaciones de entrada y sin moverse de lugar. Antes de dibujar nada, `pre.js` ya dejó dicho qué
+  idioma va: así el interruptor aparece en su posición y nadie ve un texto que cambia al cargar.
+- **Servidor**: sirve `public/`, entrega el contenido en `/api/portfolio.json` y `/api/portfolio.en.json`, y
+  manda cabeceras de seguridad (entre ellas una política de contenido que sólo deja cargar scripts y
+  estilos propios).
 
 ## Publicarla
 
@@ -94,7 +125,8 @@ Cada vez que se sube algo a `main`, GitHub arma la versión sin servidor y la pu
 (`.github/workflows/pages.yml`). Tarda cerca de un minuto y queda en https://gibelloe.github.io/portfolio/.
 
 - `npm run build` arma esa misma versión en `dist/`, por si se la quiere revisar antes: copia `public/` y
-  deja el contenido en `dist/api/portfolio.json`.
+  deja el contenido en `dist/api/portfolio.json` y `dist/api/portfolio.en.json`. Si los dos idiomas no
+  coinciden, se detiene y dice qué falta.
 - GitHub Pages sólo entrega archivos, ahí no corre `server.js`. Por eso las direcciones de la página son
   relativas (funciona igual dentro de `/portfolio/`) y los años de experiencia los cuenta la propia página.
 - Hace falta una sola vez, en el repositorio: **Settings → Pages → Source: GitHub Actions**.

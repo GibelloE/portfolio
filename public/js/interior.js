@@ -6,11 +6,12 @@
 
 import { h, sinMovimiento, trabarFondo } from './dom.js';
 import { icono } from './iconos.js';
+import { t } from './idioma.js';
 import { anotar, borrar } from './historial.js';
 
 /**
  * @param {object} opciones
- * @param {HTMLElement} opciones.boveda   el rectángulo del que sale. El diálogo queda adentro
+ * @param {HTMLElement} opciones.boveda  el rectángulo del que sale. El diálogo queda adentro
  *                                        suyo: hereda su color y los estilos de lo que guarda.
  * @param {string} opciones.id
  * @param {string} opciones.titular       lo que dice la barra de arriba
@@ -34,7 +35,7 @@ export function crearInterior({ boveda, id, titular, cont, dentro, alAbrir, alCe
       'button',
       { class: 'boton boton--fantasma interior__volver', type: 'button', on: { click: () => cerrar() } },
       icono('atras', 'flecha'),
-      'Volver',
+      t('volver'),
     ),
   );
   const dialogo = h(
@@ -46,7 +47,7 @@ export function crearInterior({ boveda, id, titular, cont, dentro, alAbrir, alCe
       h('h3', { class: 'interior__titular', id: `${id}-titular`, text: titular }),
       h(
         'button',
-        { class: 'redondo redondo--chico', type: 'button', 'aria-label': 'Cerrar', on: { click: () => cerrar() } },
+        { class: 'redondo redondo--chico', type: 'button', 'aria-label': t('cerrar'), on: { click: () => cerrar() } },
         icono('cerrar'),
       ),
     ),

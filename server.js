@@ -6,8 +6,9 @@
 //
 // Hace dos cosas:
 //   1. Sirve los archivos de public/ (HTML, CSS, JavaScript, imágenes).
-//   2. Entrega el contenido en /api/portfolio.json, leído de data/portfolio.json,
-//      con los años de experiencia calculados a la fecha de hoy.
+//   2. Entrega el contenido en /api/portfolio.json (español, de data/portfolio.json) y en
+//      /api/portfolio.en.json (inglés, de data/portfolio.en.json), con los años de
+//      experiencia calculados a la fecha de hoy.
 //
 // El sitio también se puede publicar sin este servidor (npm run build, ver build.mjs):
 // así es como queda en GitHub Pages.
@@ -19,10 +20,10 @@ import { extname, join, normalize, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { aniosDesde } from './public/js/anios.js';
+import { ARCHIVOS, diferencias, leerContenido } from './revisar.mjs';
 
 const RAIZ = fileURLToPath(new URL('.', import.meta.url));
 const PUBLICO = join(RAIZ, 'public');
-const DATOS = join(RAIZ, 'data', 'portfolio.json');
 
 const PUERTO = Number(process.env.PORT) || 4000;
 // En la PC escucha sólo en esta máquina (no salta el firewall de Windows).
@@ -63,19 +64,37 @@ const CABECERAS_DE_SEGURIDAD = {
   ].join('; '),
 };
 
-let cache = null;
+// Lo que pide la página, y en qué idioma lo entrega. Sin la extensión (/api/portfolio)
+// sigue respondiendo igual, en español.
+const IDIOMA_DE = {
+  '/api/portfolio.json': 'es',
+  '/api/portfolio': 'es',
+  '/api/portfolio.en.json': 'en',
+};
 
-/** El contenido del portfolio; se vuelve a leer sólo si el archivo cambió. */
-async function leerPortfolio() {
-  const { mtimeMs } = await stat(DATOS);
-  if (!cache || cache.mtimeMs !== mtimeMs) {
-    cache = { mtimeMs, datos: JSON.parse(await readFile(DATOS, 'utf8')) };
-  }
-  const { perfil, productos } = cache.datos;
+const cache = {};
+
+/** El contenido del portfolio en un idioma; se vuelve a leer sólo si el archivo cambió. */
+async function leerPortfolio(idioma) {
+  const { mtimeMs } = await stat(ARCHIVOS[idioma]);
+  if (cache[idioma]?.mtimeMs !== mtimeMs) cache[idioma] = { mtimeMs, datos: await leerContenido(idioma) };
+  const { perfil, productos } = cache[idioma].datos;
   return {
     perfil: { ...perfil, aniosExperiencia: aniosDesde(perfil.experienciaDesde) },
     productos,
   };
+}
+
+/** Avisa en la consola si al contenido en inglés le falta o le sobra algo respecto del español. */
+async function revisarIdiomas() {
+  try {
+    const avisos = diferencias(await leerContenido('es'), await leerContenido('en'));
+    if (avisos.length === 0) return;
+    console.warn(`Atención: el contenido en inglés no coincide con el español (${avisos.length}):`);
+    for (const aviso of avisos) console.warn(`  - ${aviso}`);
+  } catch (error) {
+    console.warn(`Atención: no se pudo leer el contenido: ${error.message}`);
+  }
 }
 
 function responder(res, estado, cuerpo, cabeceras = {}) {
@@ -143,10 +162,10 @@ const servidor = createServer(async (req, res) => {
     }
     const { pathname } = new URL(req.url, 'http://localhost');
 
-    // La página pide api/portfolio.json: con ese nombre también existe como archivo cuando
-    // el sitio se publica sin servidor. Sin la extensión sigue respondiendo igual.
-    if (pathname === '/api/portfolio.json' || pathname === '/api/portfolio') {
-      return responderJSON(res, 200, await leerPortfolio());
+    // La página pide api/portfolio.json (o api/portfolio.en.json en inglés): con esos nombres
+    // también existen como archivos cuando el sitio se publica sin servidor.
+    if (Object.hasOwn(IDIOMA_DE, pathname)) {
+      return responderJSON(res, 200, await leerPortfolio(IDIOMA_DE[pathname]));
     }
     if (pathname.startsWith('/api/')) return responderJSON(res, 404, { error: 'No existe ese recurso.' });
 
@@ -183,4 +202,5 @@ servidor.listen(PUERTO, ANFITRION, () => {
     console.log('Desde el celular, en la misma wifi:');
     for (const { adaptador, url } of direccionesEnLaRed()) console.log(`  ${url}  (${adaptador})`);
   }
+  revisarIdiomas();
 });

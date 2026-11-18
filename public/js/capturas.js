@@ -3,6 +3,7 @@
 
 import { h } from './dom.js';
 import { icono } from './iconos.js';
+import { t } from './idioma.js';
 import { anotar, borrar } from './historial.js';
 
 const lupa = () => document.getElementById('lupa');
@@ -45,11 +46,11 @@ export function figuraDeCaptura(captura) {
       {
         class: 'captura__boton',
         type: 'button',
-        'aria-label': `Ampliar: ${captura.pie}`,
+        'aria-label': t('captura.ampliar', { pie: captura.pie }),
         on: { click: () => ampliar(captura) },
       },
       h('img', { src: captura.mini, alt: captura.alt, width: 800, height: 450, loading: 'lazy', decoding: 'async' }),
-      h('span', { class: 'captura__sello', text: captura.sello ?? 'Captura real' }),
+      h('span', { class: 'captura__sello', text: captura.sello ?? t('captura.real') }),
       h('span', { class: 'captura__ampliar', 'aria-hidden': 'true' }, icono('ampliar')),
     ),
     h('figcaption', { text: captura.pie }),

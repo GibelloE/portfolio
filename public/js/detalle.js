@@ -4,11 +4,16 @@
 
 import { h, s, cifra, dosCifras, alVer, sinMovimiento, trabarFondo } from './dom.js';
 import { icono } from './iconos.js';
+import { t } from './idioma.js';
 import { destape, escalonar } from './destape.js';
 import { galeria } from './capturas.js';
 import { crearVisual } from './visuales.js';
 
 const PREFIJO_URL = '#ver-';
+
+// Al abrir un producto, las tapas se asoman al entrar en pantalla. Al repintarlo porque
+// cambió el idioma, no: sólo cambian los textos.
+let estrenando = true;
 
 /** La tapa de una función y lo que hay debajo. */
 function tapaDeFuncion(funcion, i) {
@@ -29,7 +34,7 @@ function tapaDeFuncion(funcion, i) {
     funcion.flujo &&
     h(
       'ol',
-      { class: 'flujo', 'aria-label': 'Recorrido' },
+      { class: 'flujo', 'aria-label': t('funcion.recorrido') },
       funcion.flujo.map((paso, n) => h('li', { vars: { '--i': n, '--c': paso.color }, text: paso.texto ?? paso })),
     );
   const dato =
@@ -45,7 +50,7 @@ function tapaDeFuncion(funcion, i) {
 
   return destape({
     pregunta: funcion.pregunta,
-    sobre: `Función ${dosCifras(i + 1)}`,
+    sobre: t('funcion.sobre', { n: dosCifras(i + 1) }),
     adornos: [icono(funcion.icono, 'destape__icono')],
     contenido: capturas
       ? h('div', { class: 'funcion__cuerpo' }, h('div', { class: 'funcion__texto' }, texto), capturas)
@@ -55,6 +60,7 @@ function tapaDeFuncion(funcion, i) {
     // Con capturas ocupa todo el ancho: el texto de un lado y las pantallas del otro.
     clase: capturas ? 'destape--funcion destape--ancho' : 'destape--funcion',
     orden: i + 1,
+    asoma: estrenando,
   });
 }
 
@@ -76,14 +82,14 @@ function tapaEspecial(especial, orden) {
 
   const etapas = h(
     'ol',
-    { class: 'etapas', 'aria-label': 'Etapas del proyecto' },
+    { class: 'etapas', 'aria-label': t('especial.etapas') },
     especial.etapas.map((etapa, n) =>
       h(
         'li',
         { class: n < especial.etapaActual ? 'hecha' : null },
         h('span', { text: dosCifras(n + 1) }),
         etapa,
-        n < especial.etapaActual && h('span', { class: 'oculto', text: ' (cumplida)' }),
+        n < especial.etapaActual && h('span', { class: 'oculto', text: t('especial.cumplida') }),
       ),
     ),
   );
@@ -103,7 +109,7 @@ function tapaEspecial(especial, orden) {
     // Lo que anuncia el botón de la tapa: el título entero.
     pregunta: `${especial.nombre}: ${especial.lema}`,
     // A pantalla completa el título ya va adentro, en grande: la barra pregunta, como las demás.
-    titular: `¿Qué es ${especial.nombre}?`,
+    titular: t('especial.titular', { nombre: especial.nombre }),
     tapaPropia: [
       h('span', { class: 'esp-hoja esp-hoja--izq', 'aria-hidden': 'true' }),
       h('span', { class: 'esp-hoja esp-hoja--der', 'aria-hidden': 'true' }),
@@ -117,8 +123,8 @@ function tapaEspecial(especial, orden) {
         h(
           'span',
           { class: 'esp-pista' },
-          h('span', { class: 'solo-mouse', text: 'Pasá el mouse' }),
-          h('span', { class: 'solo-tactil', text: 'Tocá para abrir' }),
+          h('span', { class: 'solo-mouse', text: t('tapa.pistaMouse') }),
+          h('span', { class: 'solo-tactil', text: t('tapa.pistaTactil') }),
         ),
       ),
       h('span', { class: 'esp-laser', 'aria-hidden': 'true' }),
@@ -126,6 +132,7 @@ function tapaEspecial(especial, orden) {
     contenido: h('div', { class: 'esp-cuerpo' }, h('div', { class: 'esp-texto' }, texto), h('div', { class: 'esp-lado' }, lado)),
     clase: 'destape--especial destape--ancho acento-verde',
     orden,
+    asoma: estrenando,
   });
 }
 
@@ -135,8 +142,8 @@ function tapaDelProblema(producto) {
   const [principal, ...resto] = [].concat(producto.problema);
   const secundarios = resto.length ? resto : [producto.resumen];
   return destape({
-    pregunta: '¿Qué problema resuelve?',
-    sobre: 'El punto de partida',
+    pregunta: t('detalle.problema'),
+    sobre: t('detalle.problemaSobre'),
     adornos: [icono('pregunta', 'destape__icono')],
     contenido: escalonar([
       h('p', { class: 'texto-grande', text: principal }),
@@ -144,13 +151,14 @@ function tapaDelProblema(producto) {
     ]),
     clase: 'destape--ancho',
     orden: 0,
+    asoma: estrenando,
   });
 }
 
 function tapaDeComoEstaHecho(producto, orden) {
   return destape({
-    pregunta: '¿Cómo está hecho?',
-    sobre: 'Por dentro',
+    pregunta: t('detalle.hecho'),
+    sobre: t('detalle.hechoSobre'),
     adornos: [icono('capas', 'destape__icono')],
     contenido: escalonar([
       h('ul', { class: 'puntos puntos--dos' }, producto.hecho.map((texto) => h('li', { text: texto }))),
@@ -171,14 +179,17 @@ function tapaDeComoEstaHecho(producto, orden) {
     ]),
     clase: 'destape--ancho',
     orden,
+    asoma: estrenando,
   });
 }
 
 /**
- * Prepara el diálogo del detalle. Devuelve `abrir(id)`.
+ * Prepara el diálogo del detalle. Devuelve `abrir(id)` y `cambiar(productos)`, que reemplaza
+ * los productos por los del otro idioma.
  * El botón Atrás del navegador (o del celular) cierra el detalle.
  */
-export function crearDetalle(productos) {
+export function crearDetalle(iniciales) {
+  let productos = iniciales;
   const dialogo = document.getElementById('detalle');
   const cuerpo = document.getElementById('detalle-cuerpo');
   const posicion = document.getElementById('detalle-posicion');
@@ -186,7 +197,9 @@ export function crearDetalle(productos) {
   let mostrado = null; // el producto que está pintado ahora
   let soltarFondo = null;
 
-  function pintar(producto) {
+  /** @param {boolean} estreno  se abre el producto (entra animado), o sólo cambió el idioma */
+  function pintar(producto, estreno = true) {
+    estrenando = estreno;
     const i = productos.indexOf(producto);
     const siguiente = productos[(i + 1) % productos.length];
 
@@ -201,7 +214,7 @@ export function crearDetalle(productos) {
         { class: 'd-cabeza__texto' },
         h('p', { class: 'rotulo', text: producto.tipo }),
         h('h2', { class: 'd-nombre neon', id: 'detalle-nombre', text: producto.nombre }),
-        producto.alias && h('p', { class: 'd-alias', text: `También: ${producto.alias}` }),
+        producto.alias && h('p', { class: 'd-alias', text: t('detalle.tambien', { alias: producto.alias }) }),
         h('p', { class: 'd-bajada', text: producto.bajada }),
         h(
           'div',
@@ -215,7 +228,7 @@ export function crearDetalle(productos) {
     );
 
     const cifras = producto.cifras.map(cifra);
-    const listaCifras = h('ul', { class: 'cifras d-cifras', 'aria-label': 'En números' }, cifras.map((c) => c.el));
+    const listaCifras = h('ul', { class: 'cifras d-cifras', 'aria-label': t('cifras') }, cifras.map((c) => c.el));
 
     const tapas = [
       tapaDelProblema(producto),
@@ -234,20 +247,20 @@ export function crearDetalle(productos) {
         h(
           'div',
           {},
-          h('p', { class: 'rotulo', text: `${producto.funciones.length} funciones` }),
-          h('h3', { class: 'd-preguntas__titulo', id: 'preguntas-titulo', text: 'Destapá cada pregunta' }),
+          h('p', { class: 'rotulo', text: t('detalle.funciones', { n: producto.funciones.length }) }),
+          h('h3', { class: 'd-preguntas__titulo', id: 'preguntas-titulo', text: t('detalle.destapa') }),
           h(
             'p',
             { class: 'd-preguntas__pista' },
-            h('span', { class: 'solo-mouse', text: 'Pasá el mouse por un rectángulo y la tapa se corre. Un clic lo deja abierto.' }),
-            h('span', { class: 'solo-tactil', text: 'Tocá un rectángulo y se abre a pantalla completa.' }),
+            h('span', { class: 'solo-mouse', text: t('detalle.pistaMouse') }),
+            h('span', { class: 'solo-tactil', text: t('detalle.pistaTactil') }),
           ),
         ),
         h(
           'div',
           { class: 'd-preguntas__acciones' },
-          h('button', { class: 'boton boton--chico', type: 'button', on: { click: fijarTodas(true) } }, 'Destapar todo'),
-          h('button', { class: 'boton boton--chico boton--fantasma', type: 'button', on: { click: fijarTodas(false) } }, 'Tapar todo'),
+          h('button', { class: 'boton boton--chico', type: 'button', on: { click: fijarTodas(true) } }, t('detalle.destaparTodo')),
+          h('button', { class: 'boton boton--chico boton--fantasma', type: 'button', on: { click: fijarTodas(false) } }, t('detalle.taparTodo')),
         ),
       ),
       h('div', { class: 'rejilla-destapes' }, tapas.map((tapa) => tapa.el)),
@@ -259,15 +272,16 @@ export function crearDetalle(productos) {
       h(
         'button',
         { class: `d-siguiente acento-${siguiente.acento}`, type: 'button', on: { click: () => abrir(siguiente.id, 'reemplazar') } },
-        h('span', { class: 'rotulo', text: 'Siguiente producto' }),
+        h('span', { class: 'rotulo', text: t('detalle.siguiente') }),
         h('span', { class: 'd-siguiente__nombre neon', text: siguiente.nombre }),
         icono('flecha', 'flecha'),
       ),
     );
 
     cuerpo.replaceChildren(cabeza, listaCifras, preguntas, pie);
-    // Vuelve a correr la entrada de costado del contenido.
     cuerpo.classList.remove('entra');
+    if (!estreno) return;
+    // Vuelve a correr la entrada de costado del contenido.
     void cuerpo.offsetWidth;
     cuerpo.classList.add('entra');
 
@@ -349,5 +363,13 @@ export function crearDetalle(productos) {
   if (location.hash.startsWith(PREFIJO_URL)) history.replaceState(null, '', location.pathname + location.search);
   if (inicial) abrir(inicial);
 
-  return { abrir };
+  /** Cambió el idioma: los mismos productos, con los textos del otro. */
+  function cambiar(nuevos) {
+    productos = nuevos;
+    const abierto = productos.find((p) => p.id === mostrado);
+    // Si hay uno a la vista se repinta en su lugar, sin la entrada animada.
+    if (abierto) pintar(abierto, false);
+  }
+
+  return { abrir, cambiar };
 }

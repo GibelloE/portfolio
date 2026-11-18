@@ -9,7 +9,8 @@
     "start": "node server.js",
     "dev": "node --watch server.js",
     "celular": "node server.js --red",
-    "build": "node build.mjs"
+    "build": "node build.mjs",
+    "revisar": "node revisar.mjs"
   },
   "engines": {
     "node": ">=18"

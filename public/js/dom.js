@@ -1,5 +1,7 @@
 // Ayudantes chicos para armar la página sin librerías.
 
+import { idioma } from './idioma.js';
+
 /** ¿La persona pausó las animaciones con el botón del menú? */
 export const sinMovimiento = () => document.documentElement.dataset.movimiento === 'quieto';
 
@@ -34,7 +36,8 @@ export function trabarFondo() {
 }
 
 const NS_SVG = 'http://www.w3.org/2000/svg';
-const formato = new Intl.NumberFormat('es-AR');
+// Los miles se escriben distinto en cada idioma: 22.769 en español, 22,769 en inglés.
+const FORMATOS = { es: new Intl.NumberFormat('es-AR'), en: new Intl.NumberFormat('en-US') };
 
 function aplicar(el, props) {
   for (const [clave, valor] of Object.entries(props)) {
@@ -70,7 +73,7 @@ export function s(etiqueta, props = {}, ...hijos) {
   return agregar(el, hijos);
 }
 
-export const numero = (valor) => formato.format(valor);
+export const numero = (valor) => FORMATOS[idioma()].format(valor);
 export const dosCifras = (n) => String(n).padStart(2, '0');
 
 /** Cuenta de 0 hasta `hasta` dentro de un elemento. */
@@ -110,9 +113,13 @@ export function alVer(el, fn, umbral = 0.3) {
 /**
  * Una cifra con su etiqueta: { valor, prefijo, sufijo, etiqueta }.
  * Devuelve el <li> y `animar()`, que la cuenta desde cero.
+ * El "más" va adelante en español ("+10") y atrás en inglés ("10+"): un sufijo que empieza
+ * con "+" lo deja pegado al número, del mismo tamaño, y lo demás en chico ("8+ years").
  */
 export function cifra({ valor, prefijo = '', sufijo = '', etiqueta }) {
   const num = h('span', { class: 'cifra__num', text: numero(valor) });
+  const mas = sufijo.startsWith('+');
+  const resto = mas ? sufijo.slice(1) : sufijo;
   const el = h(
     'li',
     { class: 'cifra' },
@@ -121,7 +128,8 @@ export function cifra({ valor, prefijo = '', sufijo = '', etiqueta }) {
       { class: 'cifra__valor' },
       prefijo && h('span', { class: 'cifra__pre', text: prefijo }),
       num,
-      sufijo && h('span', { class: 'cifra__suf', text: sufijo }),
+      mas && h('span', { class: 'cifra__pre', text: '+' }),
+      resto && h('span', { class: 'cifra__suf', text: resto }),
     ),
     h('span', { class: 'cifra__etq', text: etiqueta }),
   );

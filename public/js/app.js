@@ -1,24 +1,53 @@
-// Arranque de la página: pide el contenido (api/portfolio.json) y lo dibuja.
+// Arranque de la página: pide el contenido (api/portfolio.json, o api/portfolio.en.json en
+// inglés) y lo dibuja. Con el interruptor ES / EN del menú se vuelve a dibujar en el otro idioma.
 // Las direcciones son relativas: el sitio funciona igual en la raíz (con server.js)
 // que dentro de una carpeta (en GitHub Pages queda en …/portfolio/).
 
 import { h, cifra, dosCifras, alVer, sinMovimiento, pausarMovimiento } from './dom.js';
 import { aniosDesde } from './anios.js';
 import { icono } from './iconos.js';
+import { idioma, otroIdioma, fijarIdioma, t, aplicarTextos } from './idioma.js';
 import { destape, escalonar } from './destape.js';
 import { activarLupa, figuraDeCaptura } from './capturas.js';
 import { crearVisual } from './visuales.js';
 import { crearDetalle } from './detalle.js';
 
+/* ---------- El contenido, en cada idioma ---------- */
+
+const ARCHIVOS = { es: 'api/portfolio.json', en: 'api/portfolio.en.json' };
+const pedidos = new Map(); // idioma → la promesa de su contenido
+
+/** El contenido en un idioma. Se pide una sola vez; si falla, la próxima se vuelve a pedir. */
+function traerContenido(cual) {
+  if (!pedidos.has(cual)) {
+    const pedido = fetch(ARCHIVOS[cual], { headers: { Accept: 'application/json' } })
+      .then((respuesta) => {
+        if (!respuesta.ok) throw new Error(`El servidor respondió ${respuesta.status}`);
+        return respuesta.json();
+      })
+      .then((datos) => {
+        // Con el servidor de Node los años ya vienen calculados; sin servidor, los calcula la página.
+        datos.perfil.aniosExperiencia ??= aniosDesde(datos.perfil.experienciaDesde);
+        return datos;
+      });
+    pedido.catch(() => pedidos.delete(cual));
+    pedidos.set(cual, pedido);
+  }
+  return pedidos.get(cual);
+}
+
 /* ---------- Inicio ---------- */
+
+let relojDeRoles = null;
 
 /** Las ocupaciones pasan de costado, de a una. */
 function rotarRoles(contenedor, roles) {
+  clearInterval(relojDeRoles);
   const spans = roles.map((rol, i) => h('span', { class: i === 0 ? 'rol activo' : 'rol', text: rol }));
   contenedor.replaceChildren(...spans);
   if (spans.length < 2) return;
   let i = 0;
-  setInterval(() => {
+  relojDeRoles = setInterval(() => {
     if (sinMovimiento()) return;
     const sale = spans[i];
     i = (i + 1) % spans.length;
@@ -51,15 +80,20 @@ function escribir(el, texto, msPorLetra = 18) {
   });
 }
 
-function pintarFicha(perfil) {
+/** @param {boolean} estreno  la primera vez se escribe sola; al cambiar de idioma ya aparece escrita */
+function pintarFicha(perfil, estreno) {
   const lista = document.getElementById('ficha');
   const filas = perfil.ficha.map((fila) => {
     const valor = fila.valor.replace('{anios}', perfil.aniosExperiencia);
-    const dd = h('dd', { text: valor });
+    const dd = h('dd', {}, h('span', { class: 'escrito', text: valor }));
     return { valor, dd, el: h('div', { class: 'ficha__fila' }, h('dt', { text: fila.campo }), dd) };
   });
   lista.replaceChildren(...filas.map((fila) => fila.el));
   if (sinMovimiento()) return;
+  if (!estreno) {
+    filas.at(-1).el.classList.add('escribiendo'); // queda el cursor al final, como después de escribirse
+    return;
+  }
 
   // Se escribe sola, renglón por renglón, cuando entra en pantalla.
   filas.forEach((fila) =>
@@ -75,24 +109,26 @@ function pintarFicha(perfil) {
   });
 }
 
-function pintarInicio(perfil) {
+function pintarInicio(perfil, estreno) {
   document.title = `${perfil.nombre} — ${perfil.ocupacion}`;
   document.getElementById('hero-ocupacion').textContent = perfil.ocupacion;
   document.getElementById('hero-lugar').textContent = perfil.ubicacion;
   document.getElementById('pie-lugar').textContent = perfil.ubicacion;
   document.getElementById('presentacion').textContent = perfil.presentacion;
+  // Lo que rota es decorativo: quien usa un lector de pantalla recibe la lista entera.
+  document.getElementById('roles-leidos').textContent = `${perfil.roles.join(', ')}.`;
   rotarRoles(document.getElementById('roles'), perfil.roles);
-  pintarFicha(perfil);
+  pintarFicha(perfil, estreno);
 
   const cifras = perfil.cifras.map((c) => cifra(c.clave === 'anios' ? { ...c, valor: perfil.aniosExperiencia } : c));
   const lista = document.getElementById('hero-cifras');
   lista.replaceChildren(...cifras.map((c) => c.el));
-  alVer(lista, () => cifras.forEach((c) => c.animar()));
+  if (estreno) alVer(lista, () => cifras.forEach((c) => c.animar()));
 }
 
 /* ---------- Productos: un rectángulo por producto, con su puerta ---------- */
 
-function panelDeProducto(producto, i, abrir) {
+function panelDeProducto(producto, i, abrir, estreno) {
   // En la tarjeta van tres cifras, con su etiqueta corta; el detalle las explica enteras.
   const cifras = producto.cifras.slice(0, 3).map((c) => cifra({ ...c, etiqueta: c.corta ?? c.etiqueta }));
   const texto = escalonar([
@@ -105,7 +141,7 @@ function panelDeProducto(producto, i, abrir) {
     h(
       'button',
       { class: 'boton', type: 'button', on: { click: () => verFunciones() } },
-      'Ver funciones',
+      t('productos.verFunciones'),
       icono('flecha', 'flecha'),
     ),
   ]);
@@ -136,6 +172,7 @@ function panelDeProducto(producto, i, abrir) {
     boveda: true,
     clase: `destape--producto acento-${producto.acento}`,
     orden: i,
+    asoma: estreno,
     alDestapar: () => cifras.forEach((c) => c.animar()),
   });
 
@@ -151,13 +188,14 @@ function panelDeProducto(producto, i, abrir) {
     setTimeout(() => tapa.fijar(false), sinMovimiento() ? 0 : 650);
   }
 
-  return h('div', { data: { revelar: i % 2 === 0 ? 'izq' : 'der' } }, tapa.el);
+  // Al cambiar de idioma el panel ya está a la vista: no vuelve a entrar de costado.
+  return h('div', { class: estreno ? null : 'visible', data: { revelar: i % 2 === 0 ? 'izq' : 'der' } }, tapa.el);
 }
 
-function pintarProductos(productos, abrir) {
+function pintarProductos(productos, abrir, estreno) {
   document
     .getElementById('productos-lista')
-    .replaceChildren(...productos.map((producto, i) => panelDeProducto(producto, i, abrir)));
+    .replaceChildren(...productos.map((producto, i) => panelDeProducto(producto, i, abrir, estreno)));
 }
 
 /** Las bases técnicas con las que se desarrollan los productos: a la vista, sin tapa. */
@@ -166,7 +204,7 @@ function pintarBases(bases) {
     h(
       'header',
       { class: 'bases__cabeza' },
-      h('p', { class: 'rotulo', text: 'Cómo los desarrollo' }),
+      h('p', { class: 'rotulo', text: t('bases.rotulo') }),
       h('h3', { class: 'bases__titulo', text: bases.titulo }),
       h('p', { class: 'bases__bajada', text: bases.bajada }),
     ),
@@ -189,8 +227,9 @@ function pintarBases(bases) {
  */
 function trabajo(item, terminado = false) {
   let cuando = item.cuando ?? '';
-  if (!cuando && item.hasta) cuando = item.desde ? `${item.desde} – ${item.hasta}` : `hasta ${item.hasta}`;
-  else if (!cuando && item.desde && !terminado) cuando = `desde ${item.desde}`;
+  if (!cuando && item.hasta) {
+    cuando = item.desde ? `${item.desde} – ${item.hasta}` : t('trabajo.hasta', { fecha: item.hasta });
+  } else if (!cuando && item.desde && !terminado) cuando = t('trabajo.desde', { fecha: item.desde });
   return h(
     'li',
     {},
@@ -201,10 +240,10 @@ function trabajo(item, terminado = false) {
   );
 }
 
-function pintarSobreMi(perfil) {
+function pintarSobreMi(perfil, estreno) {
   const quien = destape({
-    pregunta: '¿Quién soy?',
-    sobre: '01 · Resumen',
+    pregunta: t('sobre.quien'),
+    sobre: t('sobre.quienSobre'),
     adornos: [icono('persona', 'destape__icono')],
     contenido: escalonar([
       ...perfil.resumen.map((parrafo, i) => h('p', { class: i === 0 ? 'texto-grande' : 'texto-tenue', text: parrafo })),
@@ -213,12 +252,19 @@ function pintarSobreMi(perfil) {
     direccion: 'izq',
     clase: 'destape--sobre',
     orden: 0,
+    asoma: estreno,
   });
 
-  const anios = cifra({ valor: perfil.aniosExperiencia, prefijo: '+', sufijo: ' años', etiqueta: 'de experiencia en IT' });
+  // "+8 años" en español, "8+ years" en inglés.
+  const anios = cifra({
+    valor: perfil.aniosExperiencia,
+    prefijo: t('sobre.aniosPrefijo'),
+    sufijo: t('sobre.aniosSufijo'),
+    etiqueta: t('sobre.aniosEtiqueta'),
+  });
   const hoy = destape({
-    pregunta: '¿Qué hago hoy?',
-    sobre: '02 · Ocupación',
+    pregunta: t('sobre.hoy'),
+    sobre: t('sobre.hoySobre'),
     adornos: [icono('maletin', 'destape__icono')],
     contenido: escalonar([
       h('ul', { class: 'cifras cifras--chicas' }, anios.el),
@@ -228,28 +274,30 @@ function pintarSobreMi(perfil) {
         h(
           'div',
           { class: 'hoy-antes' },
-          h('p', { class: 'rotulo', text: 'Antes' }),
+          h('p', { class: 'rotulo', text: t('sobre.antes') }),
           h('ol', { class: 'hoy hoy--antes' }, perfil.antes.map((item) => trabajo(item, true))),
         ),
     ]),
     direccion: 'der',
     clase: 'destape--sobre',
     orden: 1,
+    asoma: estreno,
     alDestapar: anios.animar,
   });
 
   const stack = destape({
-    pregunta: '¿Con qué trabajo?',
-    sobre: '03 · Stack',
+    pregunta: t('sobre.stack'),
+    sobre: t('sobre.stackSobre'),
     adornos: [icono('codigo', 'destape__icono')],
     // Una sola lista, de lo más importante a lo menos: el orden es el de data/portfolio.json.
     contenido: escalonar([
-      h('p', { class: 'rotulo', text: 'De lo más importante a lo menos' }),
+      h('p', { class: 'rotulo', text: t('sobre.stackOrden') }),
       h('ol', { class: 'chips chips--orden' }, perfil.stack.map((item) => h('li', { text: item }))),
     ]),
     direccion: 'der',
     clase: 'destape--sobre destape--ancho',
     orden: 2,
+    asoma: estreno,
   });
 
   stack.el.id = 'stack';
@@ -326,21 +374,39 @@ function activarMenu() {
   alDesplazar();
 }
 
-/** El botón del menú que pausa y reanuda todas las animaciones. */
+/** El botón del menú que pausa y reanuda todas las animaciones. Devuelve cómo repintarlo. */
 function activarPausa() {
   const boton = document.getElementById('pausa');
   const pintar = () => {
     const pausado = sinMovimiento();
+    const queHace = t(pausado ? 'pausa.reanudarTodo' : 'pausa.pausarTodo');
     boton.setAttribute('aria-pressed', String(pausado));
-    boton.setAttribute('aria-label', pausado ? 'Reanudar las animaciones' : 'Pausar las animaciones');
-    boton.title = pausado ? 'Reanudar las animaciones' : 'Pausar las animaciones';
-    boton.replaceChildren(icono(pausado ? 'reproducir' : 'pausa'), h('span', { text: pausado ? 'Reanudar' : 'Pausar' }));
+    boton.setAttribute('aria-label', queHace);
+    boton.title = queHace;
+    boton.replaceChildren(
+      icono(pausado ? 'reproducir' : 'pausa'),
+      h('span', { text: t(pausado ? 'pausa.reanudar' : 'pausa.pausar') }),
+    );
   };
   boton.addEventListener('click', () => {
     pausarMovimiento(!sinMovimiento());
     pintar();
   });
   pintar();
+  return { pintar };
+}
+
+/**
+ * El interruptor ES / EN: el del menú y el que lleva el detalle de un producto, que tapa el menú.
+ * La marca de color la corren los estilos, según <html data-idioma>; acá se avisa cuál se eligió
+ * y se deja dicho cuál está activo.
+ */
+function activarIdioma(alElegir) {
+  const botones = [...document.querySelectorAll('.idioma button')];
+  const pintar = () => botones.forEach((boton) => boton.setAttribute('aria-pressed', String(boton.value === idioma())));
+  for (const boton of botones) boton.addEventListener('click', () => alElegir(boton.value));
+  pintar();
+  return { pintar };
 }
 
 /** Un resplandor rojo que sigue al mouse. */
@@ -367,47 +433,108 @@ function activarLuz() {
   );
 }
 
+const quitarError = () => document.querySelector('.aviso-error')?.remove();
+
 function mostrarError(error) {
   console.error(error);
+  quitarError();
   document.getElementById('contenido').prepend(
     h(
       'div',
       { class: 'aviso-error', role: 'alert' },
-      h('strong', { text: 'No se pudo cargar el contenido.' }),
-      h('span', { text: ' Probá recargar la página.' }),
+      h('strong', { text: t('error.titulo') }),
+      h('span', { text: t('error.consejo') }),
     ),
   );
 }
 
+/* ---------- La página entera, en un idioma ---------- */
+
+let detalle = null;
+let pausa = null;
+let interruptor = null;
+
+/**
+ * Dibuja todo con el contenido de un idioma.
+ * @param {boolean} estreno  es la primera vez: corren las animaciones de entrada.
+ *                           Al cambiar de idioma no: sólo cambian los textos.
+ */
+function pintarTodo({ perfil, productos }, estreno) {
+  quitarError();
+  aplicarTextos();
+  document.querySelector('meta[name="description"]')?.setAttribute('content', t('meta.descripcion'));
+  pausa.pintar();
+  interruptor.pintar();
+
+  if (detalle) detalle.cambiar(productos);
+  else detalle = crearDetalle(productos);
+
+  pintarInicio(perfil, estreno);
+  pintarProductos(productos, detalle.abrir, estreno);
+  pintarBases(perfil.bases);
+  pintarSobreMi(perfil, estreno);
+  pintarContacto(perfil);
+  document.documentElement.classList.add('con-contenido');
+}
+
+/**
+ * Repinta sin que la página salte. Los textos no ocupan lo mismo en cada idioma: después de
+ * repintar se acomoda el desplazamiento para que lo que se estaba mirando siga en su lugar.
+ */
+function conservarLugar(repintar) {
+  const MARCAS = 'main > section, .titulo, #productos-lista > *, #bases, #sobre-lista > *';
+  const arriba = (el) => el.getBoundingClientRect().top;
+  const borde = document.getElementById('nav').offsetHeight;
+  const marcas = [...document.querySelectorAll(MARCAS)];
+  // La referencia es lo que la persona tiene delante: la primera marca que empieza en la mitad
+  // de arriba de la pantalla o, si no hay ninguna, la última que empieza por encima del menú.
+  let i = marcas.findIndex((el) => arriba(el) >= borde && arriba(el) < window.innerHeight / 2);
+  if (i < 0) i = marcas.map((el) => arriba(el) < borde).lastIndexOf(true);
+  const antes = i < 0 ? null : arriba(marcas[i]);
+  repintar();
+  const marca = document.querySelectorAll(MARCAS)[i];
+  if (antes === null || !marca) return;
+  window.scrollBy({ top: arriba(marca) - antes, behavior: 'instant' });
+}
+
+let cambiando = false;
+
+async function cambiarIdioma(nuevo) {
+  if (cambiando || nuevo === idioma()) return;
+  cambiando = true;
+  try {
+    const datos = await traerContenido(nuevo);
+    fijarIdioma(nuevo);
+    conservarLugar(() => pintarTodo(datos, false));
+  } catch (error) {
+    mostrarError(error);
+  } finally {
+    cambiando = false;
+  }
+}
+
 async function iniciar() {
   document.getElementById('anio').textContent = new Date().getFullYear();
+  // Lo que está escrito en el HTML pasa al idioma elegido antes de pedir nada.
+  aplicarTextos();
+  document.documentElement.classList.add('con-textos');
   activarMenu();
-  activarPausa();
+  pausa = activarPausa();
+  interruptor = activarIdioma(cambiarIdioma);
   activarLuz();
   activarLupa();
 
-  let datos;
   try {
-    const respuesta = await fetch('api/portfolio.json', { headers: { Accept: 'application/json' } });
-    if (!respuesta.ok) throw new Error(`El servidor respondió ${respuesta.status}`);
-    datos = await respuesta.json();
+    pintarTodo(await traerContenido(idioma()), true);
   } catch (error) {
     mostrarError(error);
-    activarRevelado();
-    return;
+    document.documentElement.classList.add('con-contenido');
   }
-
-  const { perfil, productos } = datos;
-  // Con el servidor de Node los años ya vienen calculados; sin servidor, los calcula la página.
-  perfil.aniosExperiencia ??= aniosDesde(perfil.experienciaDesde);
-  const detalle = crearDetalle(productos);
-
-  pintarInicio(perfil);
-  pintarProductos(productos, detalle.abrir);
-  pintarBases(perfil.bases);
-  pintarSobreMi(perfil);
-  pintarContacto(perfil);
   activarRevelado();
+
+  // El otro idioma se trae de fondo: así el interruptor responde al instante.
+  const cuandoHayaTiempo = window.requestIdleCallback ?? ((fn) => setTimeout(fn, 1500));
+  cuandoHayaTiempo(() => traerContenido(otroIdioma()).catch(() => {}));
 }
 
 iniciar();

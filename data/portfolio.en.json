@@ -1,0 +1,910 @@
+{
+  "perfil": {
+    "nombre": "Emanuel Gibello",
+    "ocupacion": "IT Analyst",
+    "roles": [
+      "IT Analyst",
+      "Technical Support",
+      "Functional Analysis",
+      "Systems Implementation",
+      "LAN Networking",
+      "Own Products"
+    ],
+    "ubicacion": "La Plata, Argentina",
+    "experienciaDesde": "2018-01-01",
+    "presentacion": "I implement systems, provide support and turn what people need into software that works. What already works, I don't replace: I enhance it. And when the tool doesn't exist, I build it.",
+    "resumen": [
+      "IT Analyst with experience in systems implementation and technical support. I stand out for communicating effectively with users and teams, combining soft and technical skills to streamline processes and solve problems efficiently.",
+      "I don't replace what works, because migrating from one system to another is far more complex: I look to enhance what already exists.",
+      "I also build my own products. They are born from real problems — a shop counter, a fruit packing plant, price lists from dozens of suppliers — and are tested with their users before they grow."
+    ],
+    "cifras": [
+      {
+        "clave": "anios",
+        "sufijo": "+",
+        "etiqueta": "years of IT experience"
+      },
+      {
+        "valor": 10,
+        "sufijo": "+",
+        "etiqueta": "systems successfully implemented"
+      },
+      {
+        "valor": 100,
+        "sufijo": "+",
+        "etiqueta": "users in the environments I supported"
+      },
+      {
+        "valor": 3,
+        "etiqueta": "products of my own"
+      }
+    ],
+    "ficha": [
+      {
+        "campo": "occupation",
+        "valor": "IT Analyst"
+      },
+      {
+        "campo": "experience",
+        "valor": "{anios}+ years"
+      },
+      {
+        "campo": "based in",
+        "valor": "La Plata, AR"
+      },
+      {
+        "campo": "soft skills",
+        "valor": "Effective communication · Teamwork · Problem solving · Rapport with users"
+      },
+      {
+        "campo": "products",
+        "valor": "3 of my own · 10+ successfully implemented"
+      },
+      {
+        "campo": "languages",
+        "valor": "Spanish · Fluent conversational English"
+      }
+    ],
+    "hoy": [
+      {
+        "puesto": "IT Analyst",
+        "lugar": "Gibello Repuestos Ford · family-run Ford parts business with 60 years of history",
+        "cuando": "for several years · now full time",
+        "tareas": [
+          "IT solutions and workflow automation.",
+          "Website: design, development, deployment and maintenance.",
+          "Online presence: SEO, Google Business Profile and social media."
+        ]
+      },
+      {
+        "puesto": "Technical Support, Level 1 and 2",
+        "lugar": "Independent service for large companies and individuals",
+        "desde": "01/2018",
+        "tareas": [
+          "Level 1: direct user support.",
+          "Level 2: diagnosis and resolution of the most complex incidents."
+        ]
+      }
+    ],
+    "antes": [
+      {
+        "puesto": "IT Analyst",
+        "lugar": "Municipality of Villa Regina",
+        "desde": "07/2024",
+        "hasta": "12/2025"
+      },
+      {
+        "puesto": "ICT Coordinator (Referente TIC)",
+        "lugar": "Province of Río Negro",
+        "desde": "10/2022",
+        "hasta": "03/2025"
+      }
+    ],
+    "extra": [
+      {
+        "campo": "Education",
+        "valor": "Systems Analyst (in progress) · ISSD — Cybersecurity Analyst · Google"
+      },
+      {
+        "campo": "Languages",
+        "valor": "Native Spanish · Fluent conversational English"
+      }
+    ],
+    "stack": [
+      "TypeScript",
+      "Python",
+      "SQL",
+      "Node.js",
+      "React",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Fastify",
+      "Oracle",
+      "Ubuntu Server",
+      "LAN networking",
+      "MikroTik RouterOS",
+      "VMware",
+      "Playwright",
+      "pytest",
+      "GitHub Actions",
+      "Vite",
+      "Drizzle ORM",
+      "Zod",
+      "Tkinter",
+      "Mercado Pago API",
+      "Claude Code",
+      "Scrum",
+      "Jira",
+      "UML",
+      "OOP",
+      "Helpdesk",
+      "Excel",
+      "Microsoft Office"
+    ],
+    "contacto": {
+      "email": "emanuelgibello@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/gibelloe/",
+      "github": "https://github.com/GibelloE"
+    },
+    "bases": {
+      "titulo": "Professional technical foundations",
+      "bajada": "All my products are built with the same method, from requirements gathering to go-live.",
+      "items": [
+        {
+          "icono": "planilla",
+          "titulo": "Requirements analysis",
+          "texto": "Discovery with the people who will use it: what they need, what they don't, and the criteria for calling it done."
+        },
+        {
+          "icono": "maletin",
+          "titulo": "Resource analysis",
+          "texto": "The hardware, network, people, time and budget available, before choosing the solution."
+        },
+        {
+          "icono": "red",
+          "titulo": "General Systems Theory (GST)",
+          "texto": "Each product is a system: interrelated parts, inputs, outputs and the environment it runs in."
+        },
+        {
+          "icono": "grafico",
+          "titulo": "Scalability",
+          "texto": "From one workstation to several terminals, and from one company to many, without rebuilding the foundation."
+        },
+        {
+          "icono": "capas",
+          "titulo": "Modular architecture",
+          "texto": "Independent modules that are enabled separately, with the decisions documented."
+        },
+        {
+          "icono": "escudo",
+          "titulo": "Security by design",
+          "texto": "Encryption, signatures, permissions and auditing planned from the first blueprint, not at the end."
+        },
+        {
+          "icono": "comparar",
+          "titulo": "Testing and quality",
+          "texto": "Automated tests on every change and pilots with real users before scaling up."
+        },
+        {
+          "icono": "ruta",
+          "titulo": "Incremental development",
+          "texto": "Short stages, with a roadmap and acceptance criteria that can be verified."
+        },
+        {
+          "icono": "subir",
+          "titulo": "Integration and adaptability",
+          "texto": "Designed to live alongside what each business already uses, without forcing it to switch systems."
+        },
+        {
+          "icono": "reloj",
+          "titulo": "Maintenance and support",
+          "texto": "Updates, backups, logs and diagnostics planned from the very first version."
+        }
+      ]
+    }
+  },
+  "productos": [
+    {
+      "id": "cobro-flotante",
+      "nombre": "Cobro Flotante",
+      "nombreCorto": "Cobro Flotante",
+      "tipo": "Desktop app · Windows 10/11",
+      "estado": "In use at a shop since 09/2026 · v0.97",
+      "pregunta": "What is Cobro Flotante?",
+      "bajada": "A payment display for the shop counter.",
+      "resumen": "An always-visible floating icon takes the amount. On a second monitor the customer sees the total and the alias to transfer to (the account's handle), or the payment options already worked out. It verifies the transfer in Mercado Pago and closes with a PAGO RECIBIDO (payment received) banner.",
+      "problema": "At the counter you have to show the customer how much to pay and where to transfer it, and know whether the transfer arrived without keeping an eye on your phone.",
+      "acento": "rojo",
+      "visual": "cobro",
+      "cifras": [
+        {
+          "valor": 97,
+          "sufijo": "%",
+          "corta": "transfers detected on its own",
+          "etiqueta": "of transfers detected on its own in the pilot (64 of 66)"
+        },
+        {
+          "valor": 1400,
+          "sufijo": "+",
+          "corta": "automated tests",
+          "etiqueta": "automated tests"
+        },
+        {
+          "valor": 0,
+          "corta": "required dependencies",
+          "etiqueta": "required dependencies: only Python's standard library"
+        },
+        {
+          "valor": 4,
+          "etiqueta": "terminals taking payments at once in the pilot"
+        }
+      ],
+      "stack": [
+        "Python 3.14",
+        "Tkinter",
+        "Mercado Pago API",
+        "Ed25519",
+        "Windows DPAPI",
+        "PyInstaller",
+        "Inno Setup",
+        "pytest",
+        "GitHub Actions"
+      ],
+      "hecho": [
+        "Python's standard library only: even the payment QR and the Ed25519 signatures are built without libraries.",
+        "The shop's network runs on http.server and urllib, with every request signed.",
+        "Every change ships with its test: pytest on the PC and GitHub Actions on Windows.",
+        "A single executable (PyInstaller) with an installer (Inno Setup) and signed automatic updates."
+      ],
+      "enlaces": [
+        {
+          "texto": "Public downloads on GitHub",
+          "url": "https://github.com/GibelloE/cobro-flotante-releases"
+        }
+      ],
+      "funciones": [
+        {
+          "icono": "moneda",
+          "pregunta": "How does the seller take a payment?",
+          "titulo": "Charging from a floating icon",
+          "bajada": "A circle that is always visible, on top of any program.",
+          "puntos": [
+            "One click (or Ctrl+Alt+C) opens the amount box, without switching windows.",
+            "Enter shows Transfer; Shift+Enter, Payment options; Ctrl+Enter, the QR.",
+            "The edge of the circle is a clock: it shows how long until the customer's screen closes.",
+            "The second click confirms the payment: a PAGO RECIBIDO (payment received) banner, with sound."
+          ],
+          "flujo": [
+            "Amount",
+            "Customer screen",
+            "Payment",
+            "PAYMENT RECEIVED"
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/cobro-flotante/pago-recibido.webp",
+              "mini": "img/capturas/cobro-flotante/pago-recibido-mini.webp",
+              "ancho": 1280,
+              "alto": 720,
+              "alt": "PAGO RECIBIDO (payment received) banner for $ 29.100, on a green background.",
+              "pie": "The banner the customer sees on confirmation"
+            }
+          ]
+        },
+        {
+          "icono": "monitor",
+          "pregunta": "What does the customer see?",
+          "titulo": "The customer screen",
+          "bajada": "On a second monitor: the customer looks, the seller decides.",
+          "puntos": [
+            "Transfer: the total and the alias, full screen.",
+            "Payment options already worked out: debit card, cash with a discount, card installments and Mercado Pago QR.",
+            "Payment options is an inquiry: the seller taps the one the customer picks and that payment screen opens.",
+            "If the customer doesn't buy, it is logged as an inquiry and not as a payment.",
+            "It adapts to any monitor, with each shop's logo or name."
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/cobro-flotante/formas-de-pago.webp",
+              "mini": "img/capturas/cobro-flotante/formas-de-pago-mini.webp",
+              "ancho": 1280,
+              "alto": 720,
+              "alt": "Payment options worked out: cash with a 5% discount, debit or transfer, and card installments.",
+              "pie": "Payment options, already worked out"
+            },
+            {
+              "src": "img/capturas/cobro-flotante/efectivo.webp",
+              "mini": "img/capturas/cobro-flotante/efectivo-mini.webp",
+              "ancho": 1280,
+              "alto": 720,
+              "alt": "Cash payment screen: a total of $ 27.645 with a 5% discount.",
+              "pie": "The seller chose Cash"
+            }
+          ]
+        },
+        {
+          "icono": "transferencia",
+          "pregunta": "How does it know the transfer arrived?",
+          "titulo": "Verification with Mercado Pago",
+          "bajada": "It tells you the transfer arrived, without checking your phone.",
+          "puntos": [
+            "While the customer pays, it looks for the incoming transfer by its amount and announces ✓ LLEGÓ (arrived).",
+            "It leaves the operation number copied, ready to paste into the management system.",
+            "Auto-confirm: it closes the payment without the second click when the payment is certain.",
+            "Two identical transfers: it warns TRANSFERENCIA DUPLICADA (duplicate transfer) and picks neither. It never uses the same payment twice.",
+            "If it arrives after closing, it warns LLEGÓ TARDE (arrived late) and confirms nothing."
+          ],
+          "dato": {
+            "valor": "64 of 66",
+            "etiqueta": "transfers seen while the payment was open, in the four-terminal pilot"
+          },
+          "capturas": [
+            {
+              "src": "img/capturas/cobro-flotante/transferencia.webp",
+              "mini": "img/capturas/cobro-flotante/transferencia-mini.webp",
+              "ancho": 1280,
+              "alto": 720,
+              "alt": "Transfer screen: total to pay and alias, while the payment is being verified.",
+              "pie": "What is on screen while it looks for the transfer"
+            }
+          ]
+        },
+        {
+          "icono": "red",
+          "pregunta": "What if there are several registers?",
+          "titulo": "Several registers, one shop",
+          "bajada": "A main PC coordinates all the terminals.",
+          "puntos": [
+            "Each terminal joins the main PC, and the shop's network traffic travels signed.",
+            "The Mercado Pago token lives only on the main PC, encrypted: a single query for the whole shop.",
+            "The alias, the payment options and the settings are entered once and reach every register.",
+            "Terminal status: each PC's version, whether it responds and whether it shows something different.",
+            "Calls between PCs, with a ring and an alert on the icon."
+          ],
+          "dato": {
+            "valor": "52",
+            "etiqueta": "settings keys that travel on their own from the main PC"
+          }
+        },
+        {
+          "icono": "tv",
+          "pregunta": "Who calls the next customer?",
+          "titulo": "Queue display and advertising",
+          "bajada": "The shop's TV calls the next customer.",
+          "puntos": [
+            "Each seller calls the next customer from the icon; the TV shows the number and the register.",
+            "TV over HDMI, or a Smart TV over Wi-Fi with a page served by the main PC.",
+            "Each call comes in with animation and sound; on top, a strip with the weather, a notice and the time.",
+            "Advertising video on the customer's monitor, with the turn shown in a box over the video."
+          ],
+          "flujo": [
+            "Call next",
+            "NUMBER 042",
+            "GO TO REGISTER 2"
+          ]
+        },
+        {
+          "icono": "grafico",
+          "pregunta": "What gets recorded?",
+          "titulo": "Reports and payment log",
+          "bajada": "What was charged, at which register and how.",
+          "puntos": [
+            "Each register logs every payment and how it ended, without storing anything about who paid.",
+            "Reports by register, by day and by payment method: today, yesterday, the week, the month or a date range.",
+            "One column to keep an eye on: payments confirmed by hand with no payment detected.",
+            "It exports to CSV for Excel and saves each day's closing."
+          ]
+        },
+        {
+          "icono": "escaner",
+          "pregunta": "Which management system does it work with?",
+          "titulo": "Adaptable to any management system",
+          "bajada": "It works alongside the software the shop already uses: it reads what is on screen, without touching its database or its code.",
+          "puntos": [
+            "It takes the cart total from another program using Windows text recognition and suggests it in the amount box.",
+            "Quote for WhatsApp: it reads the cart, matches the codes against the item list and builds the message from an editable template.",
+            "Before suggesting anything it checks quantity × price and the sum against the total.",
+            "It can confirm on its own when it detects the end-of-sale window."
+          ]
+        },
+        {
+          "icono": "escudo",
+          "pregunta": "How secure is it?",
+          "titulo": "Security, licensing and updates",
+          "bajada": "Designed to be installed in other shops.",
+          "puntos": [
+            "The alias is sealed with Windows encryption: if someone changes it from outside, it goes back to the real one and raises an alert.",
+            "The program ships with no passwords: each shop creates its own and only their hash is stored, sealed.",
+            "It updates itself, and only installs signed versions (Ed25519) with a verified SHA-256.",
+            "Per-module licensing with a signed activation code and a 7-day trial.",
+            "Settings backup and a support report, with no secrets inside."
+          ]
+        }
+      ],
+      "destacado": "Adaptable to any management system",
+      "captura": {
+        "src": "img/capturas/cobro-flotante/transferencia.webp",
+        "mini": "img/capturas/cobro-flotante/transferencia-mini.webp",
+        "ancho": 1280,
+        "alto": 720,
+        "alt": "Cobro Flotante's customer screen: a total to pay of $ 29.100 and the alias to transfer to.",
+        "pie": "Customer screen · Transfer"
+      }
+    },
+    {
+      "id": "frigo",
+      "nombre": "FRIGO",
+      "nombreCorto": "FRIGO",
+      "tipo": "Web platform · multi-tenant SaaS",
+      "estado": "Demo live · in active development",
+      "pregunta": "What is FRIGO?",
+      "bajada": "Fruit, from the orchard to the truck.",
+      "resumen": "A modular web platform for companies that grow, haul, pack and cold-store fruit. Five modules in the order of production, designed to be used with a phone in one hand and no signal.",
+      "problema": [
+        "Bringing the whole production process into a single system, and opening the door to working with less paperwork between companies at different points of the fruit supply chain.",
+        "For example, a grower who only works the orchard and has FRIGO will be able to work far more easily with a packing house that also has it. That will greatly cut the human hours it takes to retype a form by hand or convert an Excel file."
+      ],
+      "destacado": "The whole production process in a single system",
+      "iconoDestacado": "ruta",
+      "acento": "cian",
+      "visual": "frigo",
+      "cifras": [
+        {
+          "valor": 5,
+          "corta": "modules",
+          "etiqueta": "modules, in the order of production"
+        },
+        {
+          "valor": 82,
+          "sufijo": " / 88",
+          "corta": "tasks completed",
+          "etiqueta": "roadmap tasks completed"
+        },
+        {
+          "valor": 95,
+          "sufijo": "%",
+          "corta": "criteria verified",
+          "etiqueta": "of the acceptance criteria verified (308 of 323)"
+        },
+        {
+          "valor": 300,
+          "sufijo": "+",
+          "etiqueta": "test cases, API and end-to-end"
+        }
+      ],
+      "stack": [
+        "TypeScript",
+        "Node.js",
+        "Fastify",
+        "PostgreSQL 17",
+        "Row Level Security",
+        "Drizzle ORM",
+        "Zod",
+        "React 19",
+        "Vite",
+        "TanStack",
+        "Tailwind CSS",
+        "Playwright"
+      ],
+      "hecho": [
+        "A TypeScript monorepo: the Fastify API, the React web app and the admin console share the same Zod schemas.",
+        "PostgreSQL 17 with Row Level Security: if an endpoint forgets to filter by company, the database still returns zero rows.",
+        "Tests with Vitest against a real Postgres, and Playwright on desktop, phone, tablet and offline.",
+        "It deploys itself from main and runs the migrations on startup."
+      ],
+      "enlaces": [],
+      "funciones": [
+        {
+          "icono": "ruta",
+          "pregunta": "How is it organized?",
+          "titulo": "From the orchard to the truck",
+          "bajada": "Five modules, in the same order the fruit moves.",
+          "puntos": [
+            "The fruit goes from one step to the next: the orchard's delivery note is received at the scale, and Cold storage confirms what it is sent.",
+            "Home screen «Hoy en la planta» (Today at the plant): one big number per module and the production line.",
+            "Each operation goes step by step, full screen: one question per screen, with big buttons.",
+            "Each company sees only the modules in its license, and each module has its own color."
+          ],
+          "flujo": [
+            {
+              "texto": "Orchard",
+              "color": "#5fcb8a"
+            },
+            {
+              "texto": "Scale",
+              "color": "#e3c04b"
+            },
+            {
+              "texto": "Packing",
+              "color": "#f27a9b"
+            },
+            {
+              "texto": "Cold storage",
+              "color": "#5db2f0"
+            },
+            {
+              "texto": "Shipping",
+              "color": "#b49af0"
+            }
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/inicio.webp",
+              "mini": "img/capturas/frigo/inicio-mini.webp",
+              "ancho": 1280,
+              "alto": 992,
+              "alt": "FRIGO home screen, «Hoy en la planta» (Today at the plant): one number per module and the production line, from Orchard to Shipping.",
+              "pie": "Home: today at the plant"
+            }
+          ]
+        },
+        {
+          "icono": "hoja",
+          "pregunta": "What happens in the orchard?",
+          "titulo": "Orchard (Chacra)",
+          "bajada": "The harvest in bins and the delivery note all the way to the scale.",
+          "puntos": [
+            "The foreman logs the bins one by one or by range (1201 to 1240), even with no signal.",
+            "Internal delivery note with a sequential number per season; it goes out over WhatsApp with the orchard's location.",
+            "Daily plan: how much fruit comes in from each orchard and variety; the delivery notes count it down.",
+            "Empty bins by quantity: own and third-party, what you are owed, what you owe, write-offs and charges."
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/chacra.webp",
+              "mini": "img/capturas/frigo/chacra-mini.webp",
+              "ancho": 1280,
+              "alto": 917,
+              "alt": "Orchard module: log harvest, new delivery note, daily plan and empty bins, with the summary of bins and kilos.",
+              "pie": "Orchard"
+            }
+          ]
+        },
+        {
+          "icono": "balanza",
+          "pregunta": "How does the fruit enter the plant?",
+          "titulo": "Scale (Báscula)",
+          "bajada": "This is where the fruit enters the plant.",
+          "puntos": [
+            "It receives the orchard delivery notes and the fruit from other growers.",
+            "It weighs the truck: net kg = loaded − tare − bins × empty bin weight. Without a scale, it estimates by kg per bin.",
+            "Lots of one grower and one variety; split lots stay open and are filled across several trucks.",
+            "It assigns the destination of each bin or pallet: Cold storage, Packing or discard."
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/bascula.webp",
+              "mini": "img/capturas/frigo/bascula-mini.webp",
+              "ancho": 1280,
+              "alto": 844,
+              "alt": "Scale module: receive delivery note, fruit from another grower, new lot and assign destination.",
+              "pie": "Scale"
+            }
+          ]
+        },
+        {
+          "icono": "caja",
+          "pregunta": "And on the packing line?",
+          "titulo": "Packing (Empaque)",
+          "bajada": "The packing line, with the phone as the scanner.",
+          "puntos": [
+            "Animated map of the machine: the belt, the drums and what drops into each one.",
+            "Packing tally: the phone's camera reads the box's numbered label and the drum's in one shot.",
+            "Pallets fill up on their own by size and grade, are merged into mixed pallets and are closed with the actual count.",
+            "Bonuses per packer with a rate per box type, and each lot's balance."
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/empaque.webp",
+              "mini": "img/capturas/frigo/empaque-mini.webp",
+              "ancho": 1280,
+              "alto": 1644,
+              "alt": "Animated map of the packing machine: the belt with fruit and the drums with their size and grade.",
+              "pie": "Packing: the machine map"
+            }
+          ]
+        },
+        {
+          "icono": "copo",
+          "pregunta": "Where is each pallet?",
+          "titulo": "Cold storage (Frío)",
+          "bajada": "The map of the cold rooms, pallet by pallet.",
+          "puntos": [
+            "Interactive map: drag and drop, stacks, unusable positions and shipments in their own color.",
+            "Cooling tunnels with their hours and alerts; real capacity and a to-scale plan of the whole site.",
+            "Forklift mode on the tablet: tap what you are carrying, then tap where you drop it.",
+            "Retrieval orders from any area, with notifications even when the app is closed.",
+            "Fruit in the cold rooms: filters and a cart for building shipments."
+          ],
+          "dato": {
+            "valor": "32 of 32",
+            "etiqueta": "module tasks completed: it is the most developed one"
+          },
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/mapa.webp",
+              "mini": "img/capturas/frigo/mapa-mini.webp",
+              "ancho": 1280,
+              "alto": 720,
+              "alt": "Cold storage module: the map of the room with its dimensions, occupancy and the tools to receive, move and set up tunnels.",
+              "pie": "Cold storage: the map of a room"
+            }
+          ]
+        },
+        {
+          "icono": "camion",
+          "pregunta": "How does the fruit leave?",
+          "titulo": "Shipping (Cargas)",
+          "bajada": "From the order to the truck on the road.",
+          "puntos": [
+            "A shipment is built from a customer, a transport (truck or container) and an order.",
+            "Each pallet is scanned with the phone as it is loaded; on dispatch, the scanned ones leave the cold rooms.",
+            "GPS tracking of the trucks on the map, with Leaflet and OpenStreetMap.",
+            "Container temperature recorder and destination clearance: if the destination requires it, the shipment does not leave without it."
+          ],
+          "flujo": [
+            "Build the shipment",
+            "Scan the pallets",
+            "Dispatch",
+            "Delivered"
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/cargas.webp",
+              "mini": "img/capturas/frigo/cargas-mini.webp",
+              "ancho": 1280,
+              "alto": 1695,
+              "alt": "Shipping module: the map with the trucks on the road and their shipments.",
+              "pie": "Shipments on the road"
+            }
+          ]
+        },
+        {
+          "icono": "senal",
+          "pregunta": "What if there is no signal?",
+          "titulo": "Offline and live",
+          "bajada": "Inside a cold room there is no signal.",
+          "puntos": [
+            "The app opens and reloads with no connection, thanks to a service worker.",
+            "Logging, moving and retrieving go into a queue on the phone that uploads itself, in order, when the signal comes back.",
+            "Each operation carries an id generated on the phone: a retry is never applied twice.",
+            "Live map: every change is announced with Postgres NOTIFY and arrives over Server-Sent Events.",
+            "Notifications with standard Web Push, with no paid services and no app-store app."
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/cosecha.webp",
+              "mini": "img/capturas/frigo/cosecha-mini.webp",
+              "ancho": 1280,
+              "alto": 720,
+              "alt": "Log harvest: orchard, block, bin type and the numbers one by one or by range.",
+              "pie": "Logging the harvest, even with no signal"
+            }
+          ]
+        },
+        {
+          "icono": "capas",
+          "pregunta": "How is each company kept isolated?",
+          "titulo": "SaaS platform and security",
+          "bajada": "Many companies in a single database, each one isolated.",
+          "puntos": [
+            "Multi-tenant with a tenant_id on every table and PostgreSQL Row Level Security as a second barrier.",
+            "System and custom roles; permissions are read on every request and critical operations are audited.",
+            "Admin console with a second factor (TOTP): companies, licenses, modules and plans with limits.",
+            "30-day trial; an expired license drops to read-only during the grace period before it locks.",
+            "The database guarantees the map: a unique index prevents two pallets in the same position."
+          ],
+          "capturas": [
+            {
+              "src": "img/capturas/frigo/roles.webp",
+              "mini": "img/capturas/frigo/roles-mini.webp",
+              "ancho": 1280,
+              "alto": 964,
+              "alt": "FRIGO roles: administrator, supervisor, operator, read-only and the ones for each area, with their permissions.",
+              "pie": "Roles and permissions"
+            }
+          ]
+        }
+      ],
+      "captura": {
+        "src": "img/capturas/frigo/frio.webp",
+        "mini": "img/capturas/frigo/frio-mini.webp",
+        "ancho": 1280,
+        "alto": 801,
+        "alt": "FRIGO's forklift mode: the map of a cold room with its numbered pallets and the list of what is left to place.",
+        "pie": "Forklift mode · demo data"
+      },
+      "especial": {
+        "id": "frigo-vision",
+        "nombre": "FRIGO Vision",
+        "lema": "AI-powered quality control",
+        "tipo": "Add-on module · in research",
+        "bajada": "FRIGO's defect analyzer: live cameras over the production line.",
+        "puntos": [
+          "Fixed cameras watch the fruit as it moves along the line and measure the visible defects: bruising, limb rub, color, sunburn and insect damage.",
+          "It cross-checks each measurement with what FRIGO already knows: the lot, the grower, and the size and grade of each drum.",
+          "It flags possible pests for review: the AI suggests and a quality-control person decides.",
+          "It warns when the line drifts, with a control chart per drum every 15 minutes.",
+          "It compares what was declared with what the camera saw, grower by grower, and which destinations each lot can go to."
+        ],
+        "nota": "It measures lots: it does not sort or eject fruit, and it does not replace the official inspection.",
+        "etapas": [
+          "Proposal and research",
+          "Bench",
+          "Shadow",
+          "Advisory",
+          "Full operation"
+        ],
+        "etapaActual": 1,
+        "estado": "Stage 1 of 5 completed",
+        "capturas": [
+          {
+            "src": "img/capturas/frigo/vision.webp",
+            "mini": "img/capturas/frigo/vision-mini.webp",
+            "ancho": 1280,
+            "alto": 720,
+            "alt": "Sample FRIGO Vision dashboard: fruit seen, percentage with defects, four live cameras and the defects by type.",
+            "pie": "Sample dashboard · simulation: no figure is real",
+            "sello": "Simulation"
+          }
+        ]
+      }
+    },
+    {
+      "id": "preparador-de-listas",
+      "nombre": "Preparador de listas",
+      "nombreCorto": "Preparador",
+      "alias": "Excel Automator",
+      "tipo": "Desktop automation · Windows",
+      "estado": "In use · next stage in design",
+      "pregunta": "What is the Preparador de listas?",
+      "bajada": "Supplier price lists, with no manual work.",
+      "resumen": "Every supplier sends its price list its own way: an Excel file, a ZIP, a CSV, a DBF. The Preparador (\"list preparer\") recognizes each download, converts it to the format the business's management system expects — whichever it is — checks the prices against the previous list and automates the update.",
+      "problema": "Every supplier sends its price list its own way, and many of them were typed into the management system by hand. With nobody watching, changing prices wrongly is the main risk.",
+      "acento": "ambar",
+      "visual": "listas",
+      "cifras": [
+        {
+          "valor": 95,
+          "sufijo": "%",
+          "corta": "items covered",
+          "etiqueta": "of the items in the lists that were loaded by hand, covered by a recipe"
+        },
+        {
+          "valor": 18,
+          "sufijo": " of 19",
+          "corta": "recipes validated",
+          "etiqueta": "recipes validated as identical to the manual work"
+        },
+        {
+          "valor": 47,
+          "corta": "active suppliers",
+          "etiqueta": "active suppliers"
+        },
+        {
+          "valor": 22769,
+          "etiqueta": "items across 52 price lists"
+        }
+      ],
+      "stack": [
+        "Python",
+        "Excel (.xlsx / .xls)",
+        "CSV",
+        "DBF",
+        "ZIP",
+        "FTP",
+        "Windows UI automation"
+      ],
+      "hecho": [
+        "One recipe per supplier: it describes which file arrives, how it is transformed and how it has to end up.",
+        "Each recipe is validated by comparing its output with the list made by hand, byte by byte.",
+        "It adapts to any management system: the recipe says in which format, under which name and where each one expects it.",
+        "Several PCs share the state and take turns with a semaphore so they don't step on each other."
+      ],
+      "enlaces": [],
+      "funciones": [
+        {
+          "icono": "planilla",
+          "pregunta": "How does it get each list ready?",
+          "titulo": "One recipe per supplier",
+          "bajada": "Every list arrives different; the recipe knows how to leave it.",
+          "puntos": [
+            "It recognizes each download: .zip, .xlsx, .xls, .csv, .dbf or .txt.",
+            "It applies the supplier's recipe: which file it is, how it is transformed, what it is named and which folder it ends up in.",
+            "It leaves it the way the management system expects it (.dbf, .csv, .txt or .xlsx), with no manual steps.",
+            "19 of the 35 lists that were loaded by hand already have a recipe."
+          ],
+          "flujo": [
+            "Download",
+            "Recipe",
+            "Check",
+            "List ready"
+          ],
+          "dato": {
+            "valor": "95%",
+            "etiqueta": "of the items in those lists, covered"
+          }
+        },
+        {
+          "icono": "escudo",
+          "pregunta": "What does it check before touching prices?",
+          "titulo": "Checks before touching prices",
+          "bajada": "With nobody watching, changing prices wrongly is the main risk.",
+          "puntos": [
+            "It checks each list against the previous one before letting it through.",
+            "If more than 20% of the codes are missing, or the list looks filtered, it does not go through.",
+            "If the format changed, it does not recognize it and it stays in the inbox.",
+            "Price changes of more than ±30% are flagged.",
+            "The previous list is saved on every change: you can always roll back."
+          ]
+        },
+        {
+          "icono": "comparar",
+          "pregunta": "How do you know it is right?",
+          "titulo": "Verified against the manual work",
+          "bajada": "It has to give exactly the same result as doing it by hand.",
+          "puntos": [
+            "Each recipe is validated by comparing its output with the list that had been prepared by hand.",
+            "15 lists came out identical byte for byte, and 3 with the same content.",
+            "A dashboard shows the progress: the status of each list, the items covered and the latest check."
+          ],
+          "dato": {
+            "valor": "18 of 19",
+            "etiqueta": "recipes validated against the manual work"
+          }
+        },
+        {
+          "icono": "subir",
+          "pregunta": "Who updates the system?",
+          "titulo": "Automatic update",
+          "bajada": "It does in the management system what a person used to do, list by list.",
+          "puntos": [
+            "It goes through, in order, the lists the system downloads from each supplier's server.",
+            "It drives its window: it finds the supplier in the grid, answers the dialogs and confirms the list was recorded.",
+            "If a server does not respond, it skips that supplier and retries it at the end.",
+            "On a program error, it stops and touches nothing: from there, a person decides.",
+            "When it finishes, a summary: how long it took, how much each supplier changed and what could not be done."
+          ],
+          "dato": {
+            "valor": "16",
+            "etiqueta": "lists are updated this way, without loading them by hand"
+          }
+        },
+        {
+          "icono": "reloj",
+          "pregunta": "When does it run?",
+          "titulo": "At a fixed time, without PCs colliding",
+          "bajada": "It starts on its own, and only when it is safe.",
+          "puntos": [
+            "«Subir solo» (unattended update): you choose the time and the days, and a single PC runs it.",
+            "Shared semaphore: if another PC is updating, it waits its turn.",
+            "Before starting it checks that the session is not locked, that the system is open and that nobody else is updating.",
+            "Since it uses the mouse, it warns with a countdown and a Cancel button.",
+            "Whatever is left pending shows on a floating button, in red."
+          ]
+        },
+        {
+          "icono": "amanecer",
+          "pregunta": "What's next?",
+          "titulo": "What's next: the whole morning",
+          "estado": "In design",
+          "bajada": "Download, prepare, update and report, with nobody there.",
+          "puntos": [
+            "Unattended download: a direct link, a portal with username and password (headless browser) or email attachments.",
+            "Captchas and two-factor are not bypassed: that supplier stays manual.",
+            "With too many odd prices, the list is prepared but not updated: it waits for a person.",
+            "Two weeks in rehearsal, comparing with the manual work, and it is switched on one supplier at a time."
+          ],
+          "flujo": [
+            "07:30 FTP upload",
+            "07:45 Download lists",
+            "Prepare",
+            "Update",
+            "Report"
+          ]
+        }
+      ],
+      "destacado": "Adaptable to any management system"
+    }
+  ]
+}

@@ -10,6 +10,7 @@
 // lugar y lo de adentro se abre a pantalla completa (interior.js), sin mover la página.
 
 import { h, s, alVer } from './dom.js';
+import { t } from './idioma.js';
 import { crearInterior } from './interior.js';
 
 // El destape al pasar el mouse sólo vale donde el rectángulo no cambia de alto al abrirse.
@@ -58,6 +59,7 @@ export function escalonar(nodos) {
  * @param {boolean} [opciones.boveda]    la tapa es la puerta de una cámara: al abrirse sale niebla
  * @param {Node[]} [opciones.tapaPropia]  una tapa armada aparte (reemplaza al tirador, el rótulo y la pregunta)
  * @param {string} [opciones.titular]    lo que dice la barra de arriba a pantalla completa (si no, la pregunta)
+ * @param {boolean} [opciones.asoma]     la tapa se asoma al entrar en pantalla (no al repintar por un cambio de idioma)
  * @param {() => void} [opciones.alDestapar]  se llama la primera vez que se destapa
  */
 export function destape({
@@ -72,6 +74,7 @@ export function destape({
   boveda = false,
   tapaPropia,
   titular = pregunta,
+  asoma = true,
   alDestapar,
 }) {
   const id = `destape-${(serie += 1)}`;
@@ -104,8 +107,8 @@ export function destape({
           h(
             'span',
             { class: 'destape__pista', 'aria-hidden': 'true' },
-            h('span', { class: 'solo-mouse', text: 'Pasá el mouse' }),
-            h('span', { class: 'solo-tactil', text: 'Tocá para abrir' }),
+            h('span', { class: 'solo-mouse', text: t('tapa.pistaMouse') }),
+            h('span', { class: 'solo-tactil', text: t('tapa.pistaTactil') }),
           ),
         ),
       );
@@ -197,7 +200,7 @@ export function destape({
   });
 
   // La primera vez que entra en pantalla, la tapa se asoma un poco: avisa que se corre.
-  alVer(el, () => !abierta && el.classList.add('asoma'), 0.35);
+  if (asoma) alVer(el, () => !abierta && el.classList.add('asoma'), 0.35);
 
   return {
     el,

@@ -12,9 +12,10 @@
     ],
     "ubicacion": "La Plata, Argentina",
     "experienciaDesde": "2018-01-01",
-    "presentacion": "Implemento sistemas, doy soporte y traduzco lo que necesita la gente en software que funciona. Y cuando la herramienta no existe, la construyo.",
+    "presentacion": "Implemento sistemas, doy soporte y traduzco lo que necesita la gente en software que funciona. Lo que ya funciona no lo reemplazo: lo potencio. Y cuando la herramienta no existe, la construyo.",
     "resumen": [
       "Analista IT con experiencia en implementación de sistemas y soporte técnico. Me destaco por una comunicación efectiva con usuarios y equipos de trabajo, combinando habilidades blandas y técnicas para optimizar procesos y resolver problemas de forma eficiente.",
+      "No reemplazo lo que funciona, porque migrar de un sistema a otro es mucho más complejo: busco potenciar lo existente.",
       "Además desarrollo mis propios productos. Nacen de problemas reales —el mostrador de un comercio, una planta de empaque, las listas de precios de decenas de proveedores— y se prueban con sus usuarios antes de crecer."
     ],
     "cifras": [
@@ -52,8 +53,8 @@
         "valor": "La Plata, AR"
       },
       {
-        "campo": "stack",
-        "valor": "TypeScript · Python · SQL · Node.js · React"
+        "campo": "habilidades blandas",
+        "valor": "Comunicación efectiva · Trabajo en equipo · Resolución de problemas · Cercanía con el usuario"
       },
       {
         "campo": "productos",

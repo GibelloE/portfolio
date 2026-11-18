@@ -1,7 +1,9 @@
 // Las tres animaciones "firma": un dibujo en movimiento por producto, hecho con HTML y CSS.
 // Son decorativas (aria-hidden): lo que cuentan también está escrito en el texto.
+// Los carteles que llevan adentro salen de textos.js, en el idioma de la página.
 
 import { h, s } from './dom.js';
+import { t } from './idioma.js';
 
 /** El marco común: adentro, las medidas van en proporción a su ancho (unidades cqw). */
 const lienzo = (clase, ...hijos) =>
@@ -29,8 +31,8 @@ function cobro() {
       h(
         'div',
         { class: 'vc-globos' },
-        h('div', { class: 'vc-globo vc-importe' }, h('small', { text: 'IMPORTE' }), h('b', { text: '$ 29.100' })),
-        h('div', { class: 'vc-globo vc-aviso', text: '✓ LLEGÓ $ 29.100' }),
+        h('div', { class: 'vc-globo vc-importe' }, h('small', { text: t('v.importe') }), h('b', { text: '$ 29.100' })),
+        h('div', { class: 'vc-globo vc-aviso', text: t('v.llego') }),
       ),
     ),
     h(
@@ -43,26 +45,21 @@ function cobro() {
         h(
           'div',
           { class: 'vc-estado vc-total' },
-          h('small', { text: 'TOTAL' }),
+          h('small', { text: t('v.total') }),
           h('b', { text: '$ 29.100' }),
-          h('small', { text: 'ALIAS' }),
-          h('em', { text: 'tu.alias.mp' }),
+          h('small', { text: t('v.alias') }),
+          h('em', { text: t('v.aliasEjemplo') }),
         ),
-        h('div', { class: 'vc-estado vc-recibido' }, h('i', { text: '✓' }), h('b', { text: 'PAGO RECIBIDO' })),
+        h('div', { class: 'vc-estado vc-recibido' }, h('i', { text: '✓' }), h('b', { text: t('v.recibido') })),
       ),
       h('div', { class: 'vc-pie' }),
     ),
   );
 }
 
-// Los colores son los de cada módulo en FRIGO.
-const MODULOS_FRIGO = [
-  ['Chacra', '#5fcb8a'],
-  ['Báscula', '#e3c04b'],
-  ['Empaque', '#f27a9b'],
-  ['Frío', '#5db2f0'],
-  ['Cargas', '#b49af0'],
-];
+// Los colores de cada módulo en FRIGO, en el orden de la producción: Chacra, Báscula,
+// Empaque, Frío y Cargas. Los nombres van en textos.js ('v.modulos').
+const COLORES_FRIGO = ['#5fcb8a', '#e3c04b', '#f27a9b', '#5db2f0', '#b49af0'];
 
 // Una cámara de 10 x 4: 0 vacío, 1 pallet, 2 pallet de una carga (va con su color).
 const CAMARA = [
@@ -85,15 +82,15 @@ function frigo() {
       'div',
       { class: 'vf-linea' },
       h('div', { class: 'vf-riel' }),
-      MODULOS_FRIGO.map(([nombre, color], i) =>
-        h('div', { class: 'vf-nodo', vars: { '--c': color, '--i': i } }, h('i'), h('span', { text: nombre })),
+      t('v.modulos').map((nombre, i) =>
+        h('div', { class: 'vf-nodo', vars: { '--c': COLORES_FRIGO[i], '--i': i } }, h('i'), h('span', { text: nombre })),
       ),
       h('div', { class: 'vf-viajero' }, h('i')),
     ),
     h(
       'div',
       { class: 'vf-camara' },
-      h('div', { class: 'vf-rotulo' }, h('span', { text: 'CÁMARA 1' }), h('span', { text: `${porcentaje} % ocupada` })),
+      h('div', { class: 'vf-rotulo' }, h('span', { text: t('v.camara') }), h('span', { text: t('v.ocupada', { n: porcentaje }) })),
       h(
         'div',
         { class: 'vf-mapa' },
@@ -111,7 +108,7 @@ function listas() {
     h(
       'div',
       { class: 'vl-estaciones' },
-      ['Descarga', 'Receta', 'Control', 'Sistema'].map((nombre, j) =>
+      t('v.estaciones').map((nombre, j) =>
         h('div', { class: 'vl-estacion', vars: { '--j': j } }, h('i'), h('span', { text: nombre })),
       ),
     ),
@@ -125,21 +122,22 @@ function listas() {
     h(
       'div',
       { class: 'vl-reglas' },
-      h('span', {}, h('b', { text: '> 20 %' }), ' de códigos faltan: no pasa'),
-      h('span', {}, h('b', { text: '± 30 %' }), ' de precio: avisa'),
+      h('span', {}, h('b', { text: t('v.faltanCuanto') }), t('v.faltan')),
+      h('span', {}, h('b', { text: t('v.precioCuanto') }), t('v.precio')),
     ),
   );
 }
 
-// Cada fruta: [carril (0 a 2), demora en segundos, lo que marca la IA si tiene una falla].
+// Cada fruta: [carril (0 a 2), demora en segundos, lo que marca la IA si tiene una falla
+// (la clave de su cartel en textos.js)].
 const FRUTAS_EN_CAMARA = [
   [0, 0],
   [1, -1.4],
-  [2, -2.6, 'GOLPE 92 %'],
+  [2, -2.6, 'v.golpe'],
   [0, -3.4],
   [1, -4.6],
   [2, -5.6],
-  [0, -6.2, 'REVISAR 87 %'],
+  [0, -6.2, 'v.revisar'],
   [1, -7.3],
 ];
 
@@ -155,15 +153,15 @@ function vision() {
         h(
           'div',
           { class: falla ? 'vv-fruta vv-falla' : 'vv-fruta', vars: { '--carril': carril, '--demora': `${demora}s` } },
-          falla && h('span', { class: 'vv-caja' }, h('b', { text: falla })),
+          falla && h('span', { class: 'vv-caja' }, h('b', { text: t(falla) })),
         ),
       ),
       h('div', { class: 'vv-barrido' }),
       h('div', { class: 'vv-mira' }),
-      h('div', { class: 'vv-hud vv-hud--izq', text: 'CÁM 1 · TAMBOR 1 · CAT1' }),
-      h('div', { class: 'vv-hud vv-hud--der' }, h('i'), 'EN VIVO'),
+      h('div', { class: 'vv-hud vv-hud--izq', text: t('v.hud') }),
+      h('div', { class: 'vv-hud vv-hud--der' }, h('i'), t('v.enVivo')),
     ),
-    h('p', { class: 'vv-pie', text: 'Ilustración: así marca la IA una posible falla.' }),
+    h('p', { class: 'vv-pie', text: t('v.ilustracion') }),
   );
 }
 
